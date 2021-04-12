@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
+    <title>AMAX card</title>
+
+    <link rel="stylesheet" href="./OrderForm-step1.css"/>
+</head>
+<body>
+    <header >
+        <hr class="headerHr"/>
+        <span class="logoSpan">
+            <img class="logo" src="./assets/amex logo.png"/>
+        </span>
+        <nav class="menu">
+            <ul id="mainMenu">
+                <li><a href="">WHY AMAX?</a> </li>
+                <li><a href="">A CARD FOR ALL</a></li> 
+                <li><a href="">RELOAD YOUR CARD</a></li>
+                <li><a href="">OUR OFFERS</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="body">
+        <div id=progressBar>
+            <ol id="progressList">
+                <div class="list">
+                <div id="AmaxCard"><li >&nbsp;&nbsp; AMEX CARD</li></div>
+                <span class="triangle"></span>
+                </div>
+                <div class="list">
+                <li class="Information">&nbsp;&nbsp; INFORMATION</li>
+            </div>
+                <div class="list">
+                <li class="PaymentMethod">&nbsp;&nbsp; PAYMENT METHOD</li>
+            </div>
+            </ol>
+        </div>
+        
+       <section id="mainSection">
+            <div class="pict">
+                <img id="platinum_card" src="./assets/platinum-card-metal_480x304.png"/>
+                <img id="badge_price" src="./assets/badge_price.png"/>
+            </div>
+             <form name="personalDetails">
+                <p>Personal Details</p>
+                <hr class="mainHr">
+                <p>
+                    <label>
+                        Title
+                        <label><input type="radio" name="title" value="Mr"/>Mr</label>
+                        <label><input type="radio" name="title" value="Mis"/>Mis</label>
+                        <label><input type="radio" name="title" value="Corporate"/>Corporate</label>
+                        <label><input type="radio" name="title" value="Association"/>Association</label>
+                    </label>
+                </p>
+                <p>
+                    <span class="fieldOfForm">
+                    <label for="firstName">
+                        First Name    
+                    </label>
+                   
+                    <input type="text" id="firstName" name="firstName" />
+                </span>
+                   <span class="fieldOfForm">
+                    <label for="lastName">
+                        Last Name 
+                    </label>
+                    <input type="text" id="lastName" name="lastName" />
+                </span>
+                </p>
+                <p id="marginB">
+                    <span class="fieldOfForm">
+                        <label for="customField">
+                        Custom Field
+                        </label >
+                        <input type="text" id="customField" name="customField" />
+                    </span>
+                    <span class="fieldOfForm">
+                        <span class="dividing">
+                    <label >
+                       <span class="IBAN">IBAN UK </span>  
+                        <label  >
+                            <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
+                            <img src="./assets/united-kingdom.png" class="flagIcon">
+                        </label>
+                        <label >
+                            <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
+                            <img src="./assets/france.png"  class="flagIcon">
+                        </label>
+                    </label>
+                    <input type="button" id="addCard" name="addCard" value="Add Card"/>
+                </span>
+                    </span>
+                </p>
+                <p id="marginT">
+                    <span class="fieldOfForm">
+                    <label for="dateOfBirth">
+                        Date Of Birth
+                    </label >
+                        <input type="text" id="dateOfBirth" name="dateOfBirth" pattern=\d{1,2}\/\d{1,2}\/\d{4}/>
+                        (For example: 12/31/1970)
+                </span>
+                    
+                </p>
+                <p>
+                    <label id="labelConfirm" class="dividing">
+                        <span id="confirmText">
+                        I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
+                     </span>
+                    <input id="confirm" type="checkbox" name="confirm" hidden/>
+                    <span class="s"></span>
+                </label>
+                </p>
+            </form>
+        </section>
+        <section id="footerSection">
+            <button type="button" disabled><i class="arrow left"></i> PREVIOUS</button> </i></button>
+            <button type="button" >CONTINUE <i class="arrow right"></i></button>
+        </section>
+    </main>
+    <footer>
+        <div class="headerFooter">
+            <span>
+            <img src="./assets/lion.png" class="lion">
+            </span>
+            <b>730,804</b>  <span class="b-cWhite">subscribers trust us.</span>
+            At your service for <span class="number"><b>9</b></span> YEARS <em>and</em>  <span class="number"><b>274</b></span> days
+        
+        </div>
+        <div class="mainFooter">
+            <img src="./assets/trust-us.png" class="forterP"/>
+            <div class="forterP"> 
+                <div class="ab">
+                <h3>AMAX at your service</h3> 
+                Customer Service in English at your service by <b>phone</b> from Mondey to <b>saturdey</b>
+                <h5>from 9h to 18h30</h5> 
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
