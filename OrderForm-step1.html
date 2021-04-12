@@ -5,39 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
-    <title>AMAX card</title>
+    <title>AMEX card</title>
 
     <link rel="stylesheet" href="./OrderForm-step1.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind+Madurai:wght@300&family=Mukta+Mahee:wght@200&family=Norican&family=Oxygen:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header >
-        <hr class="headerHr"/>
-        <span class="logoSpan">
+    <header class="width-65">
+        <hr id="headerHr"/>
+        <span >
             <img class="logo" src="./assets/amex logo.png"/>
         </span>
         <nav class="menu">
             <ul id="mainMenu">
-                <li><a href="">WHY AMAX?</a> </li>
+                <li><a href="">WHY AMEX?</a> </li>
                 <li><a href="">A CARD FOR ALL</a></li> 
                 <li><a href="">RELOAD YOUR CARD</a></li>
                 <li><a href="">OUR OFFERS</a></li>
                 <li><a href="">FAQ</a></li>
             </ul>
         </nav>
-    </header>
-    <main id="body">
-        <div id=progressBar>
+    </header >
+    <main class="width-100">
+        <div>
             <ol id="progressList">
                 <div class="list">
-                <div id="AmaxCard"><li >&nbsp;&nbsp; AMEX CARD</li></div>
-                <span class="triangle"></span>
+                    <div id="AmexCard" class="height-100">
+                        <li >&nbsp;&nbsp; AMEX CARD</li>
+                    </div>
+                    <span class="triangle"></span>
                 </div>
                 <div class="list">
-                <li class="Information">&nbsp;&nbsp; INFORMATION</li>
-            </div>
+                    <li>&nbsp;&nbsp; INFORMATION</li>
+                </div>
                 <div class="list">
-                <li class="PaymentMethod">&nbsp;&nbsp; PAYMENT METHOD</li>
-            </div>
+                    <li>&nbsp;&nbsp; PAYMENT METHOD</li>
+                </div>
             </ol>
         </div>
         
@@ -46,9 +50,9 @@
                 <img id="platinum_card" src="./assets/platinum-card-metal_480x304.png"/>
                 <img id="badge_price" src="./assets/badge_price.png"/>
             </div>
-             <form name="personalDetails">
-                <p>Personal Details</p>
-                <hr class="mainHr">
+             <form class="width-65">
+                <p id="personalDetails">PERSONAL DETAILS</p>
+                <hr id="mainHr">
                 <p>
                     <label>
                         Title
@@ -60,20 +64,19 @@
                 </p>
                 <p>
                     <span class="fieldOfForm">
-                    <label for="firstName">
-                        First Name    
-                    </label>
-                   
-                    <input type="text" id="firstName" name="firstName" />
-                </span>
-                   <span class="fieldOfForm">
-                    <label for="lastName">
-                        Last Name 
-                    </label>
-                    <input type="text" id="lastName" name="lastName" />
-                </span>
+                        <label for="firstName">
+                            First Name    
+                        </label>
+                        <input type="text" id="firstName" name="firstName" />
+                    </span>
+                    <span class="fieldOfForm">
+                        <label for="lastName">
+                            Last Name 
+                        </label>
+                        <input type="text" id="lastName" name="lastName" />
+                    </span>
                 </p>
-                <p id="marginB">
+                <p class="marginB">
                     <span class="fieldOfForm">
                         <label for="customField">
                         Custom Field
@@ -82,64 +85,60 @@
                     </span>
                     <span class="fieldOfForm">
                         <span class="dividing">
-                    <label >
-                       <span class="IBAN">IBAN UK </span>  
-                        <label  >
-                            <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
-                            <img src="./assets/united-kingdom.png" class="flagIcon">
-                        </label>
                         <label >
-                            <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
-                            <img src="./assets/france.png"  class="flagIcon">
+                        <span class="IBAN">IBAN UK </span>  
+                            <label  >
+                                <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
+                                <img src="./assets/united-kingdom.png" class="flagIcon">
+                            </label>
+                            <label >
+                                <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
+                                <img src="./assets/france.png"  class="flagIcon">
+                            </label>
                         </label>
-                    </label>
-                    <input type="button" id="addCard" name="addCard" value="Add Card"/>
-                </span>
+                        <input type="button" id="addCard" name="addCard" value="ADD CARD"/>
+                    </span>
                     </span>
                 </p>
-                <p id="marginT">
+                <p class="marginT">
                     <span class="fieldOfForm">
-                    <label for="dateOfBirth">
-                        Date Of Birth
-                    </label >
+                        <label for="dateOfBirth">
+                            Date Of Birth
+                        </label >
                         <input type="text" id="dateOfBirth" name="dateOfBirth" pattern=\d{1,2}\/\d{1,2}\/\d{4}/>
-                        (For example: 12/31/1970)
-                </span>
-                    
+                        <span id="dateOfBirthForExample">(For example: 12/31/1970)</span>
+                    </span>    
                 </p>
                 <p>
                     <label id="labelConfirm" class="dividing">
                         <span id="confirmText">
                         I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
-                     </span>
+                       </span>
                     <input id="confirm" type="checkbox" name="confirm" hidden/>
                     <span class="s"></span>
                 </label>
                 </p>
             </form>
         </section>
-        <section id="footerSection">
+        <section class="footerSection">
             <button type="button" disabled><i class="arrow left"></i> PREVIOUS</button> </i></button>
-            <button type="button" >CONTINUE <i class="arrow right"></i></button>
+            <a><button type="button" >CONTINUE <i class="arrow right"></i></button></a>
         </section>
     </main>
     <footer>
-        <div class="headerFooter">
-            <span>
+        <div class="headerFooter width-100">
             <img src="./assets/lion.png" class="lion">
-            </span>
-            <b>730,804</b>  <span class="b-cWhite">subscribers trust us.</span>
-            At your service for <span class="number"><b>9</b></span> YEARS <em>and</em>  <span class="number"><b>274</b></span> days
-        
+            <b>
+                730,804 <span class="b-cWhite">subscribers trust us.</span>&nbsp &nbsp &nbsp &nbsp
+                <sub> At your service for <span class="number">9</span> YEARS <em>and</em>  <span class="number">274</span> Days</sub>
+            </b>
         </div>
         <div class="mainFooter">
-            <img src="./assets/trust-us.png" class="forterP"/>
-            <div class="forterP"> 
-                <div class="ab">
-                <h3>AMAX at your service</h3> 
+            <img src="./assets/trust-us.png" class="forterPicture height-100"/>
+            <div class="forterParagraph"> 
+                <h3><span class="bigger">AMEX</span> at your service</h3> 
                 Customer Service in English at your service by <b>phone</b> from Mondey to <b>saturdey</b>
                 <h5>from 9h to 18h30</h5> 
-            </div>
             </div>
         </div>
     </footer>
