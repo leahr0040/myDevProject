@@ -1,0 +1,720 @@
+
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: "Hind Madurai", sans-serif;
+  }
+  header{
+    height: 8%;
+    margin: 0px auto;
+  }
+  .classicHr {
+    border: none;
+    border-top: 1px solid rgb(185 192 203);
+  }
+  img {
+    object-fit: contain;
+    margin: auto;
+  }
+  .logo {
+    height: 50%;
+    width: 20%;
+  }
+  .menu {
+    
+    display: inline;
+    width: 80%;
+    height: 70%;
+    padding: 0;
+    position: absolute;
+  }
+  #mainMenu {
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 20%;
+    margin: 1% auto;
+  }
+  #mainMenu li {
+    display: inline;
+    font-weight: bold;
+    height: 100%;
+  }
+  #mainMenu li,
+  #progressList li {
+    float: left;
+    font-size: 65%;
+  }
+  li a {
+    color: rgb(145, 144, 245);
+    text-decoration: none;
+  }
+  main {
+    height: 90%;
+  }
+  
+  #progressList {
+    background-color: rgb(247, 243, 240);
+    height: 25px;
+    padding: 0;
+    margin-bottom: 1%;
+    counter-reset: item;
+    list-style-type: none;
+  }
+  .list {
+    height: 100%;
+    width: 33.33%;
+    float: left;
+    position: relative;
+  }
+  .progressSection {
+  display: inline;
+  float: left;
+  color: white;
+  
+  }
+  .checkmark{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%,-50%);
+    height: 15px;
+    width: 15px;
+    background-color: rgb(114 164 233);
+  }
+  .checkmark:after, .check:after {
+    content: "";
+    display: block;
+    margin: auto auto;
+    margin-top: 15%;
+    width: 16%;
+    height: 40%;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: translate;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .progressSectionBackground {
+    float: left;
+    font-size: 65%;
+    border-right: 25px solid transparent;
+    width: 100%;
+    height: 0px;
+    box-sizing: border-box;
+  }
+  
+  .triangleBlue{
+    border-top: 25px solid rgb(107 158 228);
+  }
+  .triangleWhiteblue{
+    border-top: 25px solid rgb(175, 198, 248);
+  }
+  .triangleYellow{
+    border-top: 25px solid rgb(243, 212, 75);
+  }
+  .whiteblue{
+    background-color: rgb(175, 198, 248);
+  }
+  .yellow{
+    background-color: rgb(243, 212, 75);
+  }
+  
+  #progressList li {
+    list-style-position: inside;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 1em;
+    font-size: 60%;
+  }
+  #progressList li:before {
+    content: counter(item) "  ";
+    counter-increment: item;
+  }
+  
+  main > section {
+    width: 65%;
+    margin: auto;
+    display: flex;
+  }
+  
+  #mainSection {
+    flex-direction: row;
+    border-bottom: 1.5px solid rgb(231 234 239);
+    height: 85%;
+    font-weight: 100;
+  }
+  .summary {
+    width: 50%;
+    margin: 3% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .customerCard{
+    height: 40%;
+    width: 70%;
+  }
+  .sticker{
+    border-radius: 50%;
+    height: 1.8em;
+    position: absolute;
+    width: 1.8em;
+    background-color: rgb(240 169 98);
+    display: block;
+    z-index: 1;
+  }
+  .sticker:after{    
+    color: white;    
+    font-weight: 100;   
+    font-size: large;    
+    display: block;
+  }
+  #one:after{
+    content:"1";
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  #one{    
+  top: -5%;    
+  left: 25%;
+  }
+  .platinumCard {
+    width: 70%;
+    position: absolute;
+    transform: rotate(-14deg);
+    margin: 3%;
+  }
+  #platinumCard2{  
+    left: 7%;
+  }
+  #letter{
+  top: 17%;
+  right: 6%;
+  position: absolute;
+  height: 80%;
+  background-color: rgb(228 226 224);
+  border-radius: 6px;
+  box-shadow: 0 0 2px 2px rgb(228 226 224);
+  padding: 10%;
+  box-sizing: border-box;
+  font-family: 'Oxygen', sans-serif;
+  }
+  .properties{
+    position:absolute;
+    display: flex;
+    top: 1px;
+    right: 1.5px;
+    width: 25%;
+    height: 30%;
+  }
+  .topText{
+    display:flex;
+    flex-direction: column;
+    line-height: 1.2;
+    height: 60%;
+  }
+  .PriorityMail{
+    font-size: xx-small;
+    font-weight: bolder;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-top: 13%;
+    width: 70%;
+    text-transform: uppercase;
+  }
+    .m20g{
+    font-size: 7px;    
+    vertical-align: top;    
+    color: rgb(147 147 146);
+    }
+  .t{
+    line-height: 1;
+    vertical-align: top;
+    font-weight: 900;
+    font-size: 2em;
+    font-family: 'Mukta Mahee', sans-serif;
+  }
+ .customerDetails{
+  margin-block: auto;
+  width: 60%;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  }
+  .customerDetails>*{  
+  border-bottom: 1px solid;       
+  font-size: x-small;    
+  margin-top: 4%;
+  }
+  .summaryCardContainer{
+    height: 53%;
+    margin: 3% auto;
+  }
+  .summaryCard{
+    height: 85%;
+    background-color: rgb(228 226 224 / 28%);
+    padding: 4%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .summaryCard, .summaryCard>div{
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  .check{
+  top: -7%;
+  right: -5%;
+  }
+  .check:after{   
+    width: 20%;    
+    height: 50%;    
+    border-width: 0 1.5px 1.5px 0;
+  }
+  .summaryCard>.cardDetails, .summaryCard>.paymentSummary{
+    margin-bottom: 5%;
+    padding: 3%;
+  }
+  .cardDetails{
+    font-size: 70%;
+    height: 35%;
+}
+.cardDetails ul{  
+  height: fit-content;  
+  left: 5%;  
+  margin: auto auto;  
+  vertical-align: middle;  
+  justify-content: center;  
+}
+.summaryCard ul{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: auto auto;
+}
+.summaryCard li{
+  list-style-type: none;
+  line-height: 1.5;
+}
+.cardDetails li:before{
+  content: "";
+  width: 3px;
+  display: inline-block;
+  height: 7px;
+  margin-right: 3%;
+  border-color: white;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  transform: rotate(40deg);
+}
+ 
+
+.iconBackground{
+  height: 1.8em;
+  width: 1.8em;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.iconCart {
+  width: 1.5em;
+  height: 1.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* overflow: hidden; */
+  float: left;
+}
+
+.iconCart .cartLine1 {
+  background-color: rgb(240 169 98);
+  width: 15%;
+  height: 7%;
+  position: absolute;
+  left: 8%;
+  top: 25%;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  border-bottom-left-radius: 35%;
+}
+
+.iconCart .cartLine2 {
+  background-color: rgb(240 169 98);
+  width: 35%;
+  height: 7%;
+  position: absolute;
+  left: 6%;
+  top: 40%;
+  -webkit-transform: rotate(80deg);
+  -moz-transform: rotate(80deg);
+  -ms-transform: rotate(80deg);
+  transform: rotate(80deg);
+}
+
+.iconCart .cartLine2:before {
+  content: "";
+  width: 120%;
+  height: 100%;
+  position: absolute;
+  left: 45%;
+  top: -280%;
+  -webkit-transform: rotate(-80deg);
+  -moz-transform: rotate(-80deg);
+  -ms-transform: rotate(-80deg);
+  transform: rotate(-80deg); 
+  background-color: inherit;
+}
+
+.iconCart .cartLine2:after {
+  content: "";
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  left: 59%;
+  top: -670%;
+  background-color: inherit;
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg); 
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 25%;
+}
+
+.iconCart .cartLine3 {
+  background-color: rgb(240 169 98);
+  width: 28%;
+  height: 10%;
+  position: absolute;
+  left: 33%;
+  top: 44.55%;
+  border-radius: 20%;
+}
+
+.iconCart .cartLine3:after {
+  content: "";
+  width: 190%;
+  height: 80%;
+  position: absolute;
+  top: -95%;
+  left: -35%;
+  background-color: inherit;
+}
+
+.iconCart .cartWheel {
+  background-color: rgb(240 169 98);
+  width: 12%;
+  height: 12%;
+  border-radius: 100%;
+  position: absolute;
+  left: 28%;
+  bottom: 20%;
+}
+
+.iconCart .cartWheel:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 100%;
+  position: absolute;
+  left: 200%;
+  bottom: 0;
+}
+.paymentMode>section>section{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.paymentSummary ul{
+  left:5%;
+  width: 85%;
+}
+.paymentSummary li{
+  display: flex;
+  justify-content: space-between;
+  font-size: 70%;
+}
+.indentation{
+  text-indent: 5px;
+}
+  
+.iconTrash {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  overflow: hidden;
+  vertical-align:middle;
+}
+.iconTrash .trashLid {
+  width: 22%;
+  height: 25%;
+  position: absolute;
+  left: 50%;
+  margin-left: -16%;
+  top: 9.5%;
+  border: 1px solid rgb(245, 46, 46);
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+}
+.iconTrash .trashContainer {
+  width: 56%;
+  height: 65%;
+  position: absolute;
+  left: 50%;
+  margin-left: -28%;
+  bottom: 10%;
+  background-color: #000;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  background-color:rgb(245, 46, 46) ;
+}
+.iconTrash .trashContainer:after {
+  content: "";
+  width: 110%;
+  height: 12%;
+  position: absolute;
+  left: 50%;
+  margin-left: -55%;
+  top: 0;
+  background-color: inherit;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+.iconTrash .trashLine1 {
+  width: 10%;
+  height: 50%;
+  position: absolute;
+  left: 35%;
+  margin-left: -2%;
+  bottom: 17%;
+  background-color: rgb(6 104 157);
+}
+.iconTrash .trashLine2 {
+  width: 10%;
+  height: 50%;
+  position: absolute;
+  left: 60%;
+  margin-left: -2%;
+  bottom: 17%;
+  background-color: rgb(6 104 157);
+}
+.coupon{
+  height: 25%;
+  display: flex;
+}
+.coupon>*{
+  margin-right: 4%;
+}
+.coupon>label{
+  line-height: 1;
+  margin-block: 1%;
+  font-size: 80%;
+  height: fit-content;
+  font-weight: 300;
+  color: rgb(92, 91, 91);
+}
+label span{
+  font-size: 70%;
+  font-weight: normal;
+  display: block;
+}
+.coupon>input{
+  height: 50%;
+  width: 45%;
+  border-radius: 30px;
+  border: 1px solid rgb(6 104 157);
+  outline: none;
+  padding: 2%;
+  font-size: 60%;
+  background-color: inherit;
+  box-sizing: border-box;
+}
+.coupon>button {
+  width: 20%;
+  height: 50%;
+  background-color: rgb(5, 112, 199);
+  color: white;
+  border-radius: 3px;
+  outline: none;
+  border: 0;
+  font-size: 60%;
+}
+.summaryCard>footer{
+  font-size: 80%;
+  height: 10%;
+  border-right: inherit;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 0px 8px 8px;
+  padding: 1% 3%;
+  box-sizing: border-box;
+}
+.summaryCard>footer>*{
+  margin-block: auto;
+}
+.summaryCard>footer>*:last-child{
+  color: rgb(240 169 98);
+} 
+.right {
+  border: 1px solid white;
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);  
+ }
+ .left {
+   border: 1px solid rgb(87 96 100);
+   transform: rotate(135deg);
+   -webkit-transform: rotate(135deg);
+ }
+ .arrow {
+ border-width: 0 1.5px 1.5px 0;
+ display: inline-block;
+ padding: 2px;
+ vertical-align: middle;
+ }
+  .paymentMode{
+    width:50%;
+    padding-left: 2%;
+    border-left: 1.5px solid rgb(231 234 239);
+    color: rgb(92, 91, 91);
+  }
+  .mainHr {
+    margin-left: 0;
+    width: 10%;
+    border: none;
+    border-top: 3px solid black;
+  }
+  .paymentModeCard{
+    border: 1px solid rgb(6 104 157);
+    border-radius: 5px;
+    height: 5.7em;
+    width: 5.2em;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 4%;
+    margin-left: 0;
+  }
+
+  .cardImg{
+    width: 70%;
+    height: 50%;
+    vertical-align:
+     middle;
+    }
+  .cardSpan{
+  margin: auto auto;
+  width: 90%;
+  height: 20%;
+  background-color: rgb(6 104 157);
+  color: white;
+  font-size: x-small;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 2;
+}
+  .sslText{
+  font-size: 0.3em;
+  display: inline-block;
+  font-weight: bolder;
+  vertical-align: super;
+}
+.sslText>img{ 
+  width: 20%;  
+  vertical-align: middle;
+}
+.paymentMode>section{
+  justify-content: space-between;
+}
+#sslOrderCard{
+    font-size: xx-small;
+    text-transform: uppercase;
+}
+#sslOrderCardImg{
+  height: 15px;
+  margin: 2%;
+  vertical-align:middle;
+}
+main > section:last-child {
+  margin-block: 1%;
+}
+#previous {
+  height: 28px;
+  width: 100px;
+  border-radius: 2px;
+  border: none;
+  font-size: 75%;
+  background-color: white;
+  color: rgb(92, 91, 91);
+}
+.disabled{
+  opacity: 0.5;
+}
+.height-25{
+  height: 25%;
+}
+  .height-100 {
+    height: 100%;
+  }
+  .width-100 {
+    width: 100%;
+  }
+  .width-90{
+    width: 90%;
+  }
+  .width-65 {
+    width: 65%;
+  }
+  .marginT {
+    margin-top: 0px;
+  }
+  .marginB {
+    margin-bottom: 0px;
+  }
+  .font-large{
+    font-size: medium;
+  }
+  .font-x-large{
+    font-size: x-large;
+  }
+  .fixed{
+     position: fixed;   
+  }
+  .relative{
+     position: relative;
+  }
+  .absolute{
+    position: absolute;
+  }
+  .background-blue{
+    background-color: rgb(6 104 157);
+    color: white;
+  }
+
+
+  
+  
+
+	

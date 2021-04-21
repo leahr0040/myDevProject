@@ -1,0 +1,418 @@
+
+  html{
+    scroll-behavior: smooth;
+  }
+  body {
+    height: 100vh;
+    margin: 0;
+    font-family: "Hind Madurai", sans-serif;
+  }
+  header{
+    height: 8%;
+    margin: 0px auto;
+  }
+  header>.fixed {
+    margin: auto auto;
+    width: 65%;
+    background-color: white;
+  }
+  .classicHr {
+    border: none;
+    border-top: 1px solid rgb(231 234 239);
+  }
+  img {
+    object-fit: contain;
+    margin: auto;
+  }
+  .logo {
+    height: 30%;
+    width: 15%;
+  }
+  .menu {
+    position: absolute;
+    display: inline;
+    width: 85%;
+    height: 70%;
+  }
+  #mainMenu {
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 20%;
+    margin: 1% auto;
+  }
+  #mainMenu li {
+    display: inline;
+    font-weight: bold;
+    height: 100%;
+  }
+  ul li,
+  ol li {
+    float: left;
+    font-size: 65%;
+  }
+  li a {
+    color: rgb(145, 144, 245);
+    text-decoration: none;
+  }
+  main {
+    margin-bottom: 3%;
+  }
+  main>.relative{    
+    height: 25px;    
+    width: 100%;
+   }
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+  }
+  #progressList {
+    background-color: rgb(247, 243, 240);
+    height: 25px;
+    padding: 0;
+    position: relative;
+    word-break: break-all;
+  }
+  .list {
+    height: 100%;
+    width: 33.33%;
+    display: inline;
+    float: left;
+    position: relative;
+  }
+  .progressSection {
+  display: inline;    
+  float: left;    
+  color: white;   
+  }
+  .checkmark{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    height: 15px;
+    width: 15px;
+    background-color: rgb(156, 155, 245);
+    box-shadow: 0 0 5px 0px rgb(166, 164, 247) inset;
+  }
+  .checkmark:after {
+    content: "";
+    display: block;
+    margin: auto auto;
+    margin-top: 15%;
+    width: 16%;
+    height: 40%;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: translate;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .progressSectionBackground {
+    float: left;
+    font-size: 65%;
+    border-right: 25px solid transparent;
+    width: 100%;
+    height: 0px;
+    box-sizing: border-box;
+  }
+  .triangleBlue{
+    border-top: 25px solid rgb(145, 144, 245);
+  }
+  .triangleYellow{
+    border-top: 25px solid rgb(243, 212, 75);
+  }
+  .yellow{
+    background-color: rgb(243, 212, 75);
+  }
+  #progressList li {
+    list-style-position: inside;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 1em;
+    font-size: 60%;
+  }
+  ol li:before {
+    content: counter(item) "  ";
+    counter-increment: item;
+  }
+  
+  main > section {
+    width: 65%;
+    margin: auto;
+    display: flex;
+  }
+  #mainSection {
+    flex-direction: row;
+    border-bottom: 1px solid rgb(185 192 203);
+  }
+  .pict {
+    width: 35%;
+    position: sticky;
+    top: 5.6em;
+  }
+  #platinumCard {
+    width: 70%;
+    display: block;
+  }
+  #badgePrice {
+    width: 50%;
+    display: block;
+  }
+  form {
+    border-left: 1px solid rgb(231 234 239);
+    font-family: "Hind Madurai", sans-serif;
+    color: rgb(92, 91, 91);
+  }
+  form>* {
+    margin-left: 3%;
+  }
+  .mainHr {
+    width: 10%;
+    border: none;
+    border-top: 3px solid black;
+  }
+  
+  form > p{
+  display: flex;
+  width: 100%;
+  font-size: smaller;
+  margin-block: 2%;
+  }
+  .fieldOfForm {
+    display: block;
+    padding: 0px;
+    margin-right: 5%;
+    width: 100%;
+  }
+  input[type="text"],input[type="tel"],select {
+    border: 1px solid rgb(231, 229, 228);
+    border-radius: 2px;
+    height: 24px;
+    width: 100%;
+    font-family: "Hind Madurai", sans-serif;
+    box-sizing: content-box;
+  }
+  select{
+    color: rgb(132, 130, 130);
+    padding: 1px 2px;
+  }
+  form>.classicHr {
+    margin: 5% auto;
+  }
+  .inputSubText {
+    color: rgb(167, 166, 166);
+    font-size: smaller;
+    display: block;
+  }
+  .dottedHR {
+    border: none;
+    border-top: 1px dashed rgb(231 234 239);
+    margin-block: 4%;
+  }
+  #delivery {
+    background-color: rgb(223 220 218);
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    margin: 0px;
+  }
+  #delivery::before {
+    content: "";
+  }
+  #delivery:checked::before {  
+  margin: 2% auto;    
+  width: 25%;    
+  display: block;    
+  transition: .1s;    
+  transition-timing-function: linear;    
+  height: 60%;    
+  border: solid rgba(99, 191, 235, 0.973);   
+  border-width: 0 2px 2px 0;    
+  transform: rotate(40deg);
+  }
+  #labelConfirm {
+    cursor: pointer;
+    display: flex;
+  }
+  .s {
+    width: 34px;
+    height: 17px;
+    border-radius: 60px;
+    background-color: rgba(225, 239, 245, 0.973);
+    transition: 0.5s;
+    display: block;
+  }
+  .s:before {
+    content: " ";
+    display: block;
+    width: 11px;
+    height: 11px;
+    box-shadow: 0px 0px 1px 1px rgb(231, 229, 228);
+    background: rgba(11, 136, 196, 0.973);
+    border: 3.5px solid white;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  :checked ~ .s:before {
+    transform: translatex(16px);
+  }
+  :checked ~ .s {
+    background-color: rgba(11, 136, 196, 0.973);
+  }
+  .footerSection {
+    justify-content: space-between;
+    margin: 1% auto;
+  }
+  button {
+    height: 28px;
+    width: 100px;
+    border-radius: 2px;
+    border: none;
+    position: relative;
+    font-size: 75%;
+  }
+  #continue {
+    background-color: rgb(5, 112, 199);
+    color: white;
+  }
+  #previous {
+    background-color: white;
+    color: black;
+  }
+  .right {
+   border: 1px solid white;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);  
+  }
+  .left {
+    border: 1px solid black;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .top{
+    border: 1px solid white;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin: 40%;
+  }
+  .arrow {
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;    
+  padding: 2px;    
+  vertical-align: middle;  
+  }
+  footer {
+    height: 20%;
+    background-color: rgb(239, 235, 233);
+    position: relative;
+  }
+  .headerFooter {
+    background-color: rgba(99, 191, 235, 0.973);
+    color: white;
+    height: 30%;
+    text-align: center;
+    font-family: "Mukta Mahee", sans-serif;
+    font-size: small;
+    font-weight: 300;
+  }
+  .lion {
+    height: 80%;
+    vertical-align: middle;
+    margin: 0.3% auto;
+  }
+  .number {
+    font-family: "Oxygen", sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .b-cWhite {
+    background-color: white;
+    color: rgba(99, 191, 235, 0.973);
+    padding: 0px 0px;
+    font-weight: bolder;
+    text-transform: lowercase;
+    height: fit-content;
+  }
+  em {
+    font-family: "Norican", cursive;
+    font-weight: lighter;
+  }
+  .mainFooter {
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+    height: 70%;
+  }
+  .forterPicture {
+    margin: auto 0px;
+  }
+  .forterParagraph {
+    margin: auto;
+    margin-left: 1%;
+    line-height: 1.1;
+  }
+  h3 {
+    line-height: 1.3;
+  }
+  h3,
+  h5 {
+    margin: 0px auto;
+    font-family: "Oxygen", sans-serif;
+  }
+  .bigger {
+    font-size: 1.18em;
+  }
+  sub {
+    font-size: small;
+  }
+  .up{
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  box-shadow: 0px 0px 3px 3px rgb(231 229 228);
+  }
+  
+
+  .height-100 {
+    height: 100%;
+  }
+  .width-100 {
+    width: 100%;
+  }
+  .width-90{
+    width: 90%;
+  }
+  .width-65 {
+    width: 65%;
+  }
+  .width-35{
+    width:35%
+  }
+  .marginT {
+    margin-top: 0px;
+  }
+  .marginB {
+    margin-bottom: 0px;
+  }
+  .font-medium{
+    font-size: medium;
+  }
+  .font-x-large{
+    font-size: x-large;
+  }
+  .fixed{
+     position: fixed;   
+  }
+  .relative{
+     position: relative;
+     margin-bottom: 1%;
+  }

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
+    <title>AMEX card</title>
+
+    <!-- <link rel="stylesheet" href="./OrderForm-step1.css"/> -->
+    <link rel="stylesheet" href="./OrderForm-step2.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind+Madurai:wght@300&family=Mukta+Mahee:wght@200&family=Norican&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="width-65 relative" id="headDocument">
+        <div class="fixed"> 
+        <hr class="classicHr" />       
+        <span >
+            <img class="logo" src="../assets/amex logo.png"/>
+            
+        </span>
+        <nav class="menu">
+            <ul id="mainMenu">
+                <li><a href="">WHY AMEX?</a> </li>
+                <li><a href="">A CARD FOR ALL</a></li> 
+                <li><a href="">RELOAD YOUR CARD</a></li>
+                <li><a href="">OUR OFFERS</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        
+        </nav>
+    </div>
+    
+    </header >
+    <main class="width-100">
+        <div class="relative">
+            <div class="fixed width-100">
+            <ol id="progressList" class="marginT">
+                <div class="list">
+
+                    <div class="progressSection height-100" class="height-100">
+                            <span class="checkmark"></span>
+                            <li >&nbsp;&nbsp; AMEX CARD</li>
+                            
+                    </div>
+                    <span class="progressSectionBackground triangleBlue yellow" ></span>
+                
+            </div>
+                <div class="list">
+                    <div class="progressSection yellow" class="height-100">
+                    <li>&nbsp;&nbsp; INFORMATION</li>
+                </div>
+                <span class="progressSectionBackground triangleYellow"></span>
+                </div>
+                <div class="list">
+                    <li>&nbsp;&nbsp; PAYMENT METHOD</li>
+                </div>
+            </ol>
+        </div>
+    </div>
+       <section id="mainSection">
+        
+    </label>
+        
+            <div class="pict height-100">
+                <img id="platinumCard" src="../assets/platinum-card-metal_480x304.png"/>
+                <img id="badgePrice" src="../assets/badge_price.png"/>
+        </div>
+             <form class="width-65">
+                <p class="font-x-large marginT">MY DETAILS</p>
+                <hr class="mainHr">
+                <p>
+
+                    <span class="fieldOfForm">
+                        <label for="email">
+                            Email
+                        </label >
+                        <input type="text" id="email" name="email" pattern=^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/>
+                        <span class="inputSubText">(To connect to your Customer Area)</span>
+                    </span>    
+                </p>
+                <p>
+                    <span class="fieldOfForm width-35">
+                        <label >
+                            Area Code  
+                            <select name="areaCode"  >
+                                <option value="44">+44 (United Kingdom)</option>
+                                <option value="33">+33 (France)</option>
+                                <option value="972">+972 (Israel)</option>
+                            </select>
+                        </label>
+                    </span>
+                    <span class="fieldOfForm width-65" >
+                        <label for="phoneNumber">
+                            Phone Number
+                        </label>
+                        <input type="tel" pattern=/\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b/g‏ id="phoneNumber" name="phoneNumber" />
+                        <span class="inputSubText">(To receive your PIN code)</span>
+                    </span>
+                </p>
+                <hr class="classicHr">
+                <p class="font-medium">RESIDENTIAL ADDRESS</p>
+                <p>
+                    <span class="fieldOfForm">   
+                        <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
+                    </span>    
+                </p>
+                <p >
+                    <span class="fieldOfForm">
+                        <label for="address">
+                            Address
+                        </label >
+                        <input type="text" id="address" name="address" />
+                    </span>
+                    <span class="fieldOfForm">
+                        <label for="additionalAddress">
+                            Additional Address Details
+                        </label >
+                        <input type="text" id="additionalAddress" name="additionalAddress" />
+                    </span>
+                </p>
+                <p >
+                    <span class="fieldOfForm">
+                        <label for="city">
+                            City
+                        </label >
+                        <input type="text" id="city" name="city" />
+                    </span>
+                    <span class="fieldOfForm">
+                        <label for="zipCode">
+                            Zip Code
+                        </label >
+                        <input type="text" id="zipCode" name="zipCode" />
+                    </span>
+                    <span class="fieldOfForm">
+                        <label for="country">
+                            Country
+                            <select name="country">
+                                <option value="United">United Kingdom</option>
+                                <option value="France">France</option>
+                                <option value="Israel">Israel</option>
+                            </select>
+                        </label >
+                        
+                    </span>
+                </p>
+                <hr class="dottedHR">
+                <p class="marginT">
+                    <label id="labeldelivery" class="marginT">
+                        
+                        <input id="delivery" type="checkbox" name="delivery"/>
+                        <span id="confirmText">
+                            Delivery Address (if different)
+                       </span>
+                       
+                    
+                </label>
+
+                </p>
+                <hr class="classicHr">
+                
+                <p>
+                    <span class="fieldOfForm">
+                        <label >
+                            Secret Question
+                            <select name="secretQuestion">
+                                <option value="secretQuestion1">​What is your mother's first name?</option>
+                                <option value="secretQuestion2">​What is the name of your favorite book?</option>
+                                <option value="secretQuestion3">What is the name of your 1st school?</option>
+                            </select>
+                            <span class="inputSubText">To help secure your card and your account</span>
+                            
+                        </label >
+                    </span>
+                </p>
+
+                <p>
+                   <span class="fieldOfForm">
+                        <label for="answer">
+                            Answer
+                        </label >
+                        <input type="text" id="answer" name="answer" />
+                    </span>
+                </p>
+                <p>
+                    <span class="fieldOfForm">
+                        <label >
+                            Card #1 First Deposit 
+                            <select name="secretQuestion">
+                                <option value="0">​0 Eur</option>
+                                <option value="10">10 Eur</option>
+                                <option value="20">20 Eur</option>
+                            </select>
+                            
+                        </label >
+                    </span>
+                </p>
+                <p class="width-90">
+                    By clicking on VALIDATE i acknowledge that my AMEX card is a customized 
+                    product and accept its immediate production from the approval of my order
+                     and, as such, expressly renounce to exercise my right to cancel my order
+                      pursuant to the provisions of article L.121-21-8 of the consumer code
+                </p>
+                <p>
+                    <label id="labelConfirm" class="width-100">
+                        <span class="width-90">
+                            I would like to receive exclusive offers from AMEX Card partners                       </span>
+                    <input id="confirm" type="checkbox" name="confirm" hidden/>
+                    <span class="s"></span>
+                </label>
+                </p>
+            </form>
+        </section>
+        <section class="footerSection">
+            <a href="../step1/OrderForm-step1.html"><button type="button" id="previous"><i class="left arrow"></i> PREVIOUS</button> </button></a>
+            <a href="../step3/OrderForm-step3.html"><button type="button" id="continue">CONTINUE <i class="right arrow"></i></button></a>
+        </section>
+    </main>
+    <footer>
+        <div class="headerFooter width-100 ">
+            <img src="../assets/lion.png" class="lion">
+            <b>
+                730,804 <span class="b-cWhite">subscribers trust us.</span>&nbsp &nbsp &nbsp &nbsp
+                <sub> At your service for <span class="number">9</span> YEARS <em>and</em>  <span class="number">274</span> Days</sub>
+            </b>
+        </div>
+        <div class="mainFooter width-65">
+            <img src="../assets/trust-us.png" class="forterPicture height-100"/>
+            <div class="forterParagraph"> 
+                <h3><span class="bigger">AMEX</span> at your service</h3> 
+                Customer Service in English at your service by <b>phone</b> from Mondey to <b>saturdey</b>
+                <h5>from 9h to 18h30</h5> 
+        </div>
+        </div>
+        <span class="up"><a href="#headDocument"><i class="top arrow"></i></a></span>
+    </footer>
+</body>
+</html>
