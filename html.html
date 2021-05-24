@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <title>AMEX card</title>
+
+    <link rel="stylesheet" href="./scss/styles.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind+Madurai:wght@300&family=Mukta+Mahee:wght@200&family=Norican&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+</link>
+</head>
+<body id="headDocument">
+    <header>
+        <div class="smallMenu">
+            <nav>
+                <b>&#x2630</b>
+                <img  src="./assets/amex logo.png"/>
+                    <span><b>&#8942;</b></span>
+                    <span><sup><b>EN</b></sup> <span>&#129171;</span>	</span>
+            </nav>
+        </div>
+        <div>
+            <img class="logo" src="./assets/amex logo.png"/>
+        <nav class="menu">
+            <ul id="mainMenu">
+                <li><a href="">WHY AMEX?</a> </li>
+                <li><a href="">A CARD FOR ALL</a></li> 
+                <li><a href="">RELOAD YOUR CARD</a></li>
+                <li><a href="">OUR OFFERS</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header >
+    
+    <main   id="page1"> 
+        <div>
+            <div>
+            <ol class="progressList">
+                <div >
+                    <div>
+                        <li>AMEX CARD</li>
+                        <i class='far fa-user'></i>
+                    </div>
+                    
+                </div>
+                
+                <div >
+                    
+                    <li>INFORMATION</li>
+                    <span class="iconify" data-icon="carbon:location" data-inline="false"></span>
+                </div>
+                <div >
+                    <li>PAYMENT METHOD</li>
+                    <span class="iconify icon:fluent:lock-closed-16-regular icon-inline:false"></span>
+                </div>
+            </ol>
+        </div>
+        </div>
+        
+       <section >
+            <div class="pict">
+                <img id="platinum_card" src="./assets/platinum-card-metal_480x304.png"/> 
+                 <img id="badge_price" src="./assets/badge_price.png"/>
+            </div>
+             <form >
+                <p>PERSONAL DETAILS</p>
+                <hr id="mainHr">
+                
+                    <label>
+                        Title
+                        <label><input type="radio" name="title" value="Mr"/>Mr</label>
+                        <label><input type="radio" name="title" value="Mis"/>Mis</label>
+                        <label><input type="radio" name="title" value="Corporate"/>Corporate</label>
+                        <label><input type="radio" name="title" value="Association"/>Association</label>
+                    </label>
+                    <div class="grid">
+                    <span >
+                        <label for="firstName">
+                            First Name    
+                        </label>
+                        <input type="text" id="firstName" name="firstName" />
+                    </span>
+                    <span >
+                        <label for="lastName">
+                            Last Name 
+                        </label>
+                        <input type="text" id="lastName" name="lastName" />
+                    </span>
+                    
+                    <span class="card1">
+                        <span>
+                        <label for="customField">
+                        Custom Field
+                        
+                        </label >
+                        <input type="text" id="customField" name="customField" />
+                    </span>
+                        <span >
+                        <label >
+                        <span class="IBAN">IBAN UK </span>  
+                            <label  >
+                                <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
+                                <img src="./assets/united-kingdom.png" class="flagIcon">
+                            </label>
+                            <label >
+                                <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
+                                <img src="./assets/france.png"  class="flagIcon">
+                            </label>
+                        </label>
+                        <input  type="button" id="addCard" name="addCard" value="ADD CARD" tabindex="0" class=""/>
+                    </span>
+                    </span>
+                
+                    <span class="card2 display-none">
+                        <label for="customField2">
+                        Custom Field
+                        </label >
+                        <input type="text" id="customField2" name="customField" />
+                        <span >
+                        <label >
+                        <span class="IBAN">IBAN UK </span>  
+                            <label  >
+                                <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
+                                <img src="./assets/united-kingdom.png" class="flagIcon">
+                            </label>
+                            <label >
+                                <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
+                                <img src="./assets/france.png"  class="flagIcon">
+                            </label>
+                        </label>
+                        <input type="button" id="deleteCard" name="deleteCard" value="DELETE CARD"/>
+                    </span>
+                    </span>
+                
+                    <span >
+                        <label for="dateOfBirth">
+                            Date Of Birth
+                        </label >
+                        <input type="text" id="dateOfBirth" name="dateOfBirth" pattern=\d{1,2}\/\d{1,2}\/\d{4}/>
+                        <span class="subText">(For example: 12/31/1970)</span>
+                    </span>    
+                </div>
+                    <label class="labelConfirm" >
+                        <span >
+                        I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
+                       </span>
+                    <input id="confirm" type="checkbox" name="confirm" hidden/>
+                    <span class="s"></span>
+                </label>
+               
+            </form>
+
+        </section>
+       
+       
+         <section class="buttonSection"><!--class="footerSection" -->
+            <a href="#page0"> 
+                <button type="button" class="previous" ><i class="arrow left"></i> PREVIOUS</button> </i></button>
+            
+                <a href="#page2"><button type="button" class="continue" >CONTINUE 
+                <i class="spinner"></i><i class="arrow right"></i></button></a>
+                    
+                 
+        </section>
+    </main>
+
+    <main  id="page2"> 
+        <div>
+            <div>
+            <ol class="progressList progressList2">
+                <div >
+                    <div>
+                        <span class="checkmark"></span>
+                        <li>AMEX CARD</li>
+                        <i class='far fa-user'></i>
+                    </div>    
+                </div>
+                <div>
+                    <li>INFORMATION</li>
+                    <span class="iconify" data-icon="carbon:location" data-inline="false"></span>
+                </div>
+                <div >
+                    <li>PAYMENT METHOD</li>
+                    <span class="iconify icon:fluent:lock-closed-16-regular icon-inline:false"></span>
+                </div>
+            </ol>
+        </div>
+        </div>
+        <section >
+    </label>
+        <div>
+            <div class="pict pictPage2">
+                <img id="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
+                <img id="badgePrice" src="./assets/badge_price.png"/>
+        </div>
+    </div >
+             <form >
+                <p >MY DETAILS</p>
+
+                <hr id="mainHr">
+                <fieldset>
+                    <span >
+                        <label for="email">
+                            Email
+                        </label >
+                        <input type="text" id="email" name="email" pattern=^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/>
+                        <span class="subText">(To connect to your Customer Area)</span>
+                    </span>    
+               <div >
+                    <span  >
+                        <label >
+                            Area Code  
+                            <select name="areaCode"  >
+                                <option value="44">+44 (United Kingdom)</option>
+                                <option value="33">+33 (France)</option>
+                                <option value="972">+972 (Israel)</option>
+                            </select>
+                        </label>
+                    </span>
+                    <span>
+                        <label for="phoneNumber">
+                            Phone Number
+                        </label>
+                        <input type="tel" pattern=/\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b/g‏ id="phoneNumber" name="phoneNumber" />
+                        <span class="subText">(To receive your PIN code)</span>
+                    </span>
+                </div>
+               </fieldset>
+               
+                <p class="font-medium">RESIDENTIAL ADDRESS</p>
+                <fieldset>
+                    
+                    <span >   
+                        <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
+                    </span>    
+                    <div >
+                    <span >
+                        <label for="address">
+                            Address
+                        </label >
+                        <input type="text" id="address" name="address" />
+                    </span>
+                    <span >
+                        <label for="additionalAddress">
+                            Additional Address Details
+                        </label >
+                        <input type="text" id="additionalAddress" name="additionalAddress" />
+                    </span>
+                    </div>
+                    <div >
+                    <span >
+                        <label for="city">
+                            City
+                        </label >
+                        <input type="text" id="city" name="city" />
+                    </span>
+                    <span >
+                        <label for="zipCode">
+                            Zip Code
+                        </label >
+                        <input type="text" id="zipCode" name="zipCode" />
+                    </span>
+                
+                    <span >
+                        <label for="country">
+                            Country
+                            <select name="country">
+                                <option value="United">United Kingdom</option>
+                                <option value="France">France</option>
+                                <option value="Israel">Israel</option>
+                            </select>
+                        </label >   
+                    </span>
+                   
+                </div>
+                    <hr class="dottedHR">
+                <div class="display-block">
+                <input id="delivery" type="checkbox" name="delivery">
+                    <label id="labeldelivery" for="delivery">
+                        <span id="confirmText">
+                           
+                            Delivery Address (if different)
+                       </span> 
+                    </label> 
+                        
+                    <fieldset>
+                        <span >   
+                            <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
+                        </span>    
+                   
+                        <div >
+                            <span >
+                                <label for="address">
+                                    Address
+                                </label >
+                                <input type="text" id="address" name="address" />
+                            </span>
+                            <span >
+                                <label for="additionalAddress">
+                                    Additional Address Details
+                                </label >
+                                <input type="text" id="additionalAddress" name="additionalAddress" />
+                            </span>
+                            </div>
+                            <div >
+                            <span >
+                                <label for="city">
+                                    City
+                                </label >
+                                <input type="text" id="city" name="city" />
+                            </span>
+                            <span >
+                                <label for="zipCode">
+                                    Zip Code
+                                </label >
+                                <input type="text" id="zipCode" name="zipCode" />
+                            </span>
+                        
+                            <span >
+                                <label for="country">
+                                    Country
+                                    <select name="country">
+                                        <option value="United">United Kingdom</option>
+                                        <option value="France">France</option>
+                                        <option value="Israel">Israel</option>
+                                    </select>
+                                </label >   
+                            </span>
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </div>
+               
+                
+                <fieldset>
+                    <span >
+                        <label >
+                            Secret Question
+                            <select name="secretQuestion">
+                                <option value="secretQuestion1">​What is your mother's first name?</option>
+                                <option value="secretQuestion2">​What is the name of your favorite book?</option>
+                                <option value="secretQuestion3">What is the name of your 1st school?</option>
+                            </select>
+                            <span class="subText">To help secure your card and your account</span>
+                            
+                        </label >
+                    </span>
+               
+                   <span >
+                        <label for="answer">
+                            Answer
+                        </label >
+                        <input type="text" id="answer" name="answer" />
+                    </span>
+                
+                    <span >
+                        <label >
+                            Card #1 First Deposit 
+                            <select name="secretQuestion">
+                                <option value="0">​0 Eur</option>
+                                <option value="10">10 Eur</option>
+                                <option value="20">20 Eur</option>
+                            </select>
+                            
+                        </label >
+                    </span>
+               
+                <p class="Paragraph">
+                    By clicking on VALIDATE i acknowledge that my AMEX card is a customized 
+                    product and accept its immediate production from the approval of my order
+                     and, as such, expressly renounce to exercise my right to cancel my order
+                      pursuant to the provisions of article L.121-21-8 of the consumer code
+                </p>
+                <p>
+                    
+                    <label class="labelConfirm" >
+                        <span>
+                            I would like to receive exclusive offers from AMEX Card partners                       </span>
+                    <input class="confirm" type="checkbox" name="confirm" hidden/>
+                    <span class="s"></span>
+                </label>
+                </p>
+            </fieldset>
+            </form>
+        </section>
+        
+        <section >
+            <a href="#page1"><button type="button" class="previous"><i class="left arrow"></i> PREVIOUS</button> </button></a>
+            <a href="#page3"><button type="button" class="continue"><i class="spinner"></i> CONTINUE <i class="right arrow"></i></button></a>
+        </section>
+        
+    </main> 
+
+    <main id="page3">
+        <div>
+            <div>
+            <ol class="progressList progressList2 progressList3">
+                <div >
+                    <div>
+                        <span class="checkmark"></span>
+                        <li>AMEX CARD</li>
+                        <i class='far fa-user'></i>
+                    </div>    
+                </div>
+                <div>
+                    <div>
+                        <span class="checkmark"></span>
+                        <li>INFORMATION</li>
+                        <span class="iconify" data-icon="carbon:location" data-inline="false"></span>
+                    </div> 
+                </div>
+                <div >
+                    <li>PAYMENT METHOD</li>
+                    <span class="iconify icon:fluent:lock-closed-16-regular icon-inline:false"></span>
+                </div>
+            </ol>
+        </div>
+        </div>
+   <section>
+    
+        <div >
+            
+            <div class="detailsSummary">
+                <span class="one"></span>
+                <img id="platinumCard1" class="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
+                <img id="platinumCard2" class="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
+                <div class="letter">
+                    <div class="properties">
+                        <div class="topText">
+                            <span >Priority Mail</span>
+                            <span >M 20 g</span>
+                        </div>
+                       <span >T</span>  
+                    </div>
+                    <div class="customerDetails">
+                        <div >John Doe</div>
+                        <div >22 London Road</div>
+                        <div >London, SE1 6JW</div>
+                        <div >United Kingdom</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="summaryCardContainer">
+            <div class="summaryCard">
+                <span class="sticker check"></span>
+                <div class="cardDetails">
+                    
+                    <ul>
+                        <li>Card type: AMEX International</li>
+                        <li>Currency: EUR</li>
+                        <li>IBAN: UK</li>
+                        
+                    </ul>
+                </div>
+                <div class="paymentSummary">
+                    
+                    <span class="iconBackground">
+                        <span class="iconify" data-icon="bi:cart-dash" data-inline="false"></span>
+                    </span>
+                    
+                <ul>
+                    <li><span> 1 X card (annual fees)</span><span>29.90 &#8364;</span> </li>
+                    <li class="indentation">
+                        <span>
+                            <i class="fa fa-trash-o"></i>
+                            <span>First deposit</span> 
+                            
+                        </span>
+                        <span>10.00 &#8364;</span>
+                        </li>
+                        
+                        <li> 
+                            
+                            <span>
+                                <i class="fa fa-trash-o"></i>
+                            1 X card (annual fees)
+                            </span>
+                            <span>29.90 &#8364;</span> 
+                        
+                    </li>    
+                </ul>
+            </div>
+                <div class="coupon">
+                    <label for="coupon">COUPON <span>(optional)</span></label>
+                    <input id="coupon" placeholder="Write the coupon code here ...">
+                    <button class="disabled">VALIDATE</button>
+                </div>
+                <footer class="background-blue width-100">
+                    <span>Total <i class="right arrow"></i></span>
+                    <span>39.90 &#8364;</span>
+                </footer>
+            </div>
+        </div>
+        </div>
+   
+        <div class="paymentMode">
+            <p >PAYMENT MODE</p>
+            <hr class="mainHr">
+             <h4>Select your payment method</h4>
+                <section>
+                   
+                <div class="paymentModeCard">
+                    <img class="cardImg" src="./assets/visa-card.png">
+                    <span class="cardSpan width-90">VISA Card</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                
+                </div>
+                <div class="paymentModeCard">
+               
+                    <img class="cardImg" src="./assets/master-american-dinners-card.png">
+                    <span class="cardSpan">Mastercard</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                    
+                </div>
+      
+                <div class="paymentModeCard disabled" >
+                    
+                    <img class="cardImg paypal" src="./assets/paypal-card.png">
+                    <span class="cardSpan">PayPAl</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                
+                </div>
+            
+                <div class="paymentModeCard">
+                
+                    <img class="cardImg" src="./assets/neosurf-coupons.png">
+                    <span class="cardSpan">Neosurf</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                    
+                </div>
+                <div class="paymentModeCard withoutSsl">
+                
+                    <img class="cardImg" src="./assets/poste.png">
+                    <span class="cardSpan">Mandat (MVC)</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                </div>
+                <div class="paymentModeCard withoutSsl">
+                    
+                    <img class="cardImg" src="./assets/virement.png">
+                    <span class="cardSpan">Transfer</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                </div>
+            
+                <div class="paymentModeCard disabled" >
+                    
+                    <img class="cardImg" src="./assets/bitcoin.png">
+                    <span class="cardSpan">Bitcoin</span>
+                    <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
+                    
+                </div>
+            </section>
+            <div id="sslOrderCard">
+                <img src="./assets/ssl-order-card.png" id="sslOrderCardImg">Secure Payment Option - SSL
+            </div>
+        </div>
+         
+    </section>
+    <section class="footerSection">
+        <a href="#page2"><button type="button" id="previous" class="previous" class="relative"><i class="left arrow"></i> PREVIOUS</button> </button></a>
+    </section>
+</main>
+
+<main class="defualt"  id="page0">
+    <p class="img">
+
+    </p>
+    <h1>Choose Your <span>Card</span></h1>
+    <hr>
+    <div>
+    <div>
+        <a href="#page1">
+            <img src="./assets/platinum-card-metal_480x304.png">
+        </a>
+         <h2>basic <i class="right arrow"></i></h2>
+    <ul>
+        <li>No documents to provide</li>
+        <li>Withdrawal up to €100 per day</li>
+        <li>Embossed and Customizable Card</li>
+        <li>IBAN/RIB included</li>
+    </ul>
+    </div>
+    <div>
+       <a href="#page1"> <img  src="./assets/amex gold.jpg"></a>
+        <h2>classic <i class="right arrow"></i></h2>
+        <ul>
+            
+            <li>Individual or society</li>
+            <li>Access to Special Offers</li>
+            <li>Balance up to €10.000</li>
+            <li>Reloading up to €15.000/month</li>
+        </ul>
+        </div>
+        <div>
+            <a href="#page1">
+            <img src="./assets/amex blue.jpg">
+            </a>
+            <h2>vip <i class="right arrow"></i></h2>
+            <ul>
+                <li>Individual or society</li>
+                <li>Access to Special Offers</li>
+                <li>Balance up to €25.000</li>
+                <li>Reloading up to €50.000/month</li>
+            </ul>
+            </div>
+        </div>
+            <p>Note: Depending on your country of residence, local recharge limits may apply to your card.</p>
+    
+</main>
+    <span class="up p0"><a href="#page0"><i class="top arrow"></i></a></span>
+    <span class="up p1"><a href="#page1"><i class="top arrow"></i></a></span>
+    <span class="up p2"><a href="#page2"><i class="top arrow"></i></a></span>
+    <span class="up p3"><a href="#page3"><i class="top arrow"></i></a></span>
+    <footer>
+         <div ><!--class="headerFooter" -->
+            <div><img src="./assets/lion.png" > 730,804 <span class="b-cWhite">subscribers trust us.</span></div>          
+                <span>   At your service for</span> 
+                <span><span class="number">9</span> YEARS 
+                 <em>and</em>  <span class="number">274</span> Days</span>
+            
+         </div>
+         <div ><!--class="mainFooter" -->
+            
+             <div > <!--class="forterParagraph" -->
+                <h3><span class="bigger">AMEX</span> at your service</h3> 
+                Customer Service in English at your service by <b>phone</b> from Mondey to <b>saturdey
+                    from 9h to 18h30
+                </b>
+                 
+            </div>
+            <img src="./assets/trust-us.png" class="forterPicture"/>
+        </div>
+    </footer>
+   
+    <script src="js/js.js"></script>
+</body>
+</html>

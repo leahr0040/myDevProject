@@ -1,0 +1,104 @@
+$praymaryColor: #e6e3e3;//#ebe7e3;
+$secondaryColor: #f3d44b;
+$additionalColor: rgba(99, 191, 235, 0.973);
+$anotherColor: #06689d;
+$newColor:#f0a962;
+$trashColor:#f52e2e;
+
+
+$full:100%;
+$regularWidth:65%;
+$fullscreenWidth:100vw;
+$fullscreenHeight:100vh;
+$gutter:2%;
+
+$marginSection:3%;
+$border:1px solid $praymaryColor;
+$backgroundImageSize:100%;
+
+$letterWidth:23em;
+$MinletterWidth:14em;
+$letterHeight:12em;
+$letterTop:1.5em;
+
+$summaryCardHeight:22em;
+
+$iconTrashWidth:12px;
+
+
+$headerHeight:2.5em;
+$progressHeight:25px;
+
+$desktopWidth:65%;
+
+$praymaryFont:"Hind Madurai", sans-serif;
+$secondaryFont:"Mukta Mahee", sans-serif;
+$additionalFont:"Oxygen", sans-serif;
+$anotherFont:"Norican", cursive;
+
+$clipPathFirst:polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+$clipPathSecond:polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+$clipPathThird:polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+
+@mixin shape($defintion){
+    clip-path:$defintion ;
+    -webkit-clip-path: $defintion;
+    -moz-clip-path: $defintion;
+
+    shape-outside:$defintion ;
+    -webkit-shape-outside:$defintion ;
+    -moz-shape-outside:$defintion;
+}
+
+@mixin grid($gridTemplateColumn){
+    display:grid;
+    display:-ms-grid;
+    grid-template-columns:$gridTemplateColumn;
+    -ms-grid-column: $gridTemplateColumn;
+}
+
+%flexColumn{
+    display: flex;
+    display:-ms-flex;
+    display:-webkit-flex;
+    flex-direction: column;
+
+}
+@mixin mainHr{
+    width: 2em;
+    border: none;
+    border-top: 3px solid darken($praymaryColor,50%) ;;
+    margin-block: 4%;
+
+}
+@mixin p{
+    margin-bottom: 0;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 2%;
+    color:darken($praymaryColor,40%) ;
+}
+
+@mixin verticalCenter{
+    top:50%;
+    transform:translateY(-50%);
+}
+@mixin verticalHorizontalCenter{
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.background-blue {
+    background-color: $anotherColor;
+    color: white;
+}
+//@for $i from 1 through 12{
+   @mixin col($i){
+        width:($i * 100%)/12 -$gutter *2;
+    }
+//}
+
+
+
+

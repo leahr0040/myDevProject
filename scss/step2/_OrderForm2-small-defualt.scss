@@ -1,0 +1,118 @@
+.progressList2 > div 
+{
+  transform: scale(1.12);
+    transform-origin: top;
+    height: 90%;
+    li{
+      font-size: 55%;
+    }
+    &:first-child {
+    background-color: $additionalColor;
+    } 
+    &:nth-child(2) {
+        background-color: $secondaryColor;
+      @include shape($clipPathSecond);
+
+    }
+}
+
+
+.checkmark{
+    border-radius: 50%;
+    position: absolute;
+    left: 35%;
+    @include verticalCenter;
+    height: 15px;
+    width: 15px;
+    background-color: #9c9bf5;
+    box-shadow: 0 0 5px 0px #a6a4f7 inset;
+  }
+  .checkmark:after {
+    content: "";
+    display: block;
+    margin: auto auto;
+    margin-top: 15%;
+    width: 16%;
+    height: 40%;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: translate;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.pictPage2{
+  display: none;
+}
+  select{
+    color: rgb(132, 130, 130);
+    padding: 1px 2px;
+  }
+  select:focus {
+    min-width: $full;;
+    width: auto;
+}
+  option{
+    width:$full;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+fieldset{
+  @extend %flexColumn;
+  width:$full;
+  padding:0;
+  border:none;
+  border-bottom:1px solid$praymaryColor;
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
+  fieldset{
+    border-bottom: none;
+  }
+}
+  .dottedHR {
+    border: none;
+    border-top: 1px dashed $praymaryColor;
+    margin-block: 4%;
+    width: $full;
+  }
+  #delivery {
+     -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    background-color:darken($praymaryColor,10%) ;
+    box-shadow: 0 1px 1px 0px $praymaryColor inset;
+  }
+  #delivery::before {
+    content: "";
+    display: block;
+  }
+  #delivery:checked
+  {
+      &::before {  
+      position: relative;
+      bottom: 25%;
+      left: 20%;
+    margin: 2% auto;    
+    width: 30%;    
+    display: block;    
+    transition: .1s;    
+    transition-timing-function: linear;    
+    height: 80%;    
+    border: solid black;   
+    border-width: 0 2px 2px 0;    
+    transform: rotate(40deg);
+    }
+    &~fieldset{
+     display:initial;
+    }
+  }
+  #delivery:not(:checked)~fieldset{
+    display:none;
+  }
+  
+  
+.Paragraph{
+  width: 70%;
+}

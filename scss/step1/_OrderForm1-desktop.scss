@@ -1,0 +1,40 @@
+.progressList
+ {
+    li{
+    display:inline;
+    }
+    i,SVG{
+     display:none;
+    }
+}
+main > section {
+    width: $desktopWidth;
+    margin-inline:auto;
+    &:last-child{
+        margin-top:1%;
+    }
+
+}
+.pict img{
+     &:first-of-type{
+        width:70%;
+    }
+    &:nth-of-type(2){
+        width:50%;
+    }
+}
+[type="text"],select,[type="tel"]{
+    height: 25px;   
+} 
+form{
+    font-size: .9em;
+& > span,.grid>span,fieldset>span,fieldset>div>span {
+    margin-top: .5rem;
+  }
+  .labelConfirm > span:first-child{
+        margin-block: .7em;
+}
+ }
+ #page1:target~ .p1,#page3:target~ .p3{
+    display:none !important;
+  }

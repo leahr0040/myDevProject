@@ -1,0 +1,23 @@
+.pictPage2{
+    display: block;
+    position:sticky;
+    top:4.2em;
+  }
+  fieldset{
+    &:last-of-type{
+        border-bottom: none;
+    }
+    &>div{
+        display: flex;
+        justify-content:space-between;
+        column-gap: 2%;
+    }
+  }
+  .display-block{
+      display: block;
+  }
+
+.Paragraph{
+    width:80%;
+}
+

@@ -1,0 +1,30 @@
+#page0
+{
+    width: $full;
+    font-size:small;
+    background-size: 50em;
+    padding-top: 12em;
+    h1{
+        text-shadow: 0.5px 0.5px white;
+    }
+    &>div:first-of-type{
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr;
+        // display:-ms-grid;
+        // -ms-grid-template-columns:1fr 1fr 1fr;
+        @include grid(1fr 1fr 1fr);
+        margin-left: 5em;
+        &>div{
+            text-align: left;
+            &>ul{
+                margin-left:1em;
+            }
+        }
+    }
+}
+.defualt{
+    &~.p0{
+      display:none !important;
+    }
+
+}

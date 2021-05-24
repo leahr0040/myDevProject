@@ -1,0 +1,20 @@
+@import './varibles';
+
+@import './step0/OrderForm0-small-defualt';
+@import './step1/OrderForm1-small-defualt';
+@import './step2/OrderForm2-small-defualt';
+@import './step3/OrderForm3-small-defualt';
+
+@media (min-width:42em){
+    @import './step0/_OrderForm0-tablet';
+    @import './step1/OrderForm1-tablet';
+    @import './step2/OrderForm2-tablet';
+    @import './step3/OrderForm3-tablet';
+}
+
+@media (min-width:60em){
+    @import './step0/Orderform0-destop';
+    @import './step1/OrderForm1-desktop';
+    @import './step2/Orderform2-destop';
+    @import './step3/Orderform3-destop'; 
+}

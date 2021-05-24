@@ -1,0 +1,74 @@
+.progressList3 li{
+    color: white;
+}
+#page3 > section:first-of-type > div:first-child{
+    width:100%;
+    max-width: none;
+    &>div:first-child{
+        max-width: 20em;
+    }
+}
+.paymentMode>section>div{
+    &:nth-child(odd){
+        margin-right: 0;
+    }
+    @include col(4);
+    height:5.7em;
+    margin-right: 0;
+    &:nth-child(3n-2),&:nth-child(3n-1){
+        margin-right: 2%;
+    }
+    img{
+        height: 50%;
+    }
+    &>span:first-of-type{
+        height: 20%;
+    font-size: x-small;
+    }
+    &>span:nth-of-type(2){
+        font-size: 0.3em;
+    display: inline-block;
+    font-weight: bolder;
+    vertical-align: super;
+    }
+}
+.withoutSsl{
+    height: 8em;
+    &>span:nth-of-type(2){
+      display:inline-block !important;
+      visibility: hidden;
+    }
+  }
+  .summaryCardContainer{
+      height:17em;
+      &>div>div{
+        margin-bottom:3%;
+        &:first-of-type{
+            height:35%;
+        }
+        &:nth-of-type(2){
+            height:25%;
+        }
+    }
+  }
+  .coupon{
+      flex-direction: row;
+      max-width:20em;
+      &>*{
+          margin-right: 0;
+
+      }
+      &>label{
+          width:5em;
+          
+      }
+      &>input{
+        margin-inline: 2%;
+        height: 2.5em;
+      }
+      &>button{
+        width:8em;
+        margin-top: 0;
+        height: 2.5em;
+      }
+  }

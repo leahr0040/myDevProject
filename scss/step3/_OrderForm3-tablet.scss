@@ -1,0 +1,34 @@
+
+#page3>section:first-of-type{
+    @include grid(1fr 1fr );
+    &>div{
+        &:first-child{
+        margin-right: 0;
+        padding-right:1em !important;
+        }
+        &:nth-child(2){
+            margin-left: 0;
+            padding-left:4%;
+            border-left: $border;
+        }
+    
+    }
+}
+.check{
+     display: block;   
+}
+.paymentMode{
+    &>p:first-of-type{
+        @include p;
+        text-align: start;
+        display:block;
+    }
+     &>hr:first-of-type{
+        display:block;
+        margin-left: 0;
+        @include mainHr;
+      }
+      &>h4{
+        display:none;
+      }
+}
