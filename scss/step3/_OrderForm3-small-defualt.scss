@@ -11,7 +11,9 @@
     @include shape($clipPathThird);
   }
 }
-
+.progressList3 svg{
+  color:white;
+}
 #page3 {
   & > section:first-of-type {
     //first-main section
@@ -30,7 +32,7 @@
         //letter container
         position: relative;
         height: $letterHeight;
-        margin-bottom: $letterTop + 2em;
+        margin-bottom: $letterTop + 4em;
         width: $full;
         left: 50%;
         transform: translateX(-50%);
@@ -57,9 +59,9 @@
 .one {
   @extend %sticker;
   top: -0.7em;
-  left: 5em;
+  left: 7em;
   &:after {
-    content: "1";
+    content: attr(data-content);
     text-align: center;
     font-family: "Fjalla One", sans-serif;
     position: absolute;
@@ -69,13 +71,13 @@
 .platinumCard {
   width: 80%;
   position: absolute;
-  transform: rotate(-14deg);
+  transform: rotate(-10deg);
   margin-left: 1em;
   left: 2%;
 }
 #platinumCard2 {
-  left: 7%;
-  display: none;
+  left: 9%;
+  //display: none;
 }
 .letter {
   top: $letterTop;
@@ -147,10 +149,10 @@
 .summaryCardContainer {
   position: relative;
   width: $full;
-  height: $summaryCardHeight;
+  min-height: $summaryCardHeight;
   margin-bottom: 2em;
   & > * {
-    height: $full;
+    //height: $full;
     width: $full;
     background-color: fade-out($praymaryColor, 0.6);
     padding: 7%;
@@ -166,6 +168,7 @@
     li {
       list-style-type: none;
       line-height: 1.5;
+      padding-block:2px;
     }
     & > div {
       @extend %borderRadius;
@@ -176,10 +179,11 @@
       &:first-of-type {
         //cardDetails
         font-size: 80%;
-        height: 30%;
+        //height: 30%;
         margin-bottom: 8%;
         @extend .background-blue;
-        ul {
+         div //ul
+         {
           width: $full;
           height: fit-content;
           left: 5%;
@@ -201,7 +205,7 @@
       } //cardDetails
       &:nth-of-type(2) {
         //paymentSummary
-        height: 20%;
+        //height: 20%;
         @extend .background-blue;
       } //paymentSummary
     }
@@ -211,7 +215,7 @@
 .check {
   @extend %sticker;
   display: none;
-  top: -5%;
+  top: -3%;
   right: -3%;
 }
 .check:after {
@@ -241,24 +245,34 @@
   flex-direction: row;
   width: $full;
 }
-.paymentSummary ul {
-  left: 5%;
-  width: 85%;
-}
-.paymentSummary li {
-  display: flex;
-  justify-content: space-between;
-  font-size: 70%;
-  &:first-child {
-    text-indent: $iconTrashWidth;
+// .paymentSummary ul {
+//   left: 5%;
+//   width: 85%;
+// }
+.paymentSummary {
+  li:first-of-type>div:first-child,.fixed{
+      text-indent: $iconTrashWidth;
   }
-  &:nth-child(2) {
-    text-indent: $iconTrashWidth * 2;
+  li>div,.fixed{
+    display: flex;
+    justify-content: space-between;
+    font-size: 70%;
+    &>span:first-child{
+        max-width:80%;
+    }
+    &>span:last-child{
+    //   display: flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    }
+    &:nth-child(2) {
+      text-indent: $iconTrashWidth;
+    }
   }
 }
 .coupon {
   width: $full;
-  @extend %flexColumn;
+   @extend %flexColumn;
   & > * {
     margin-right: 4%;
     margin-bottom: 1%;
@@ -295,7 +309,7 @@
   }
 }
 .summaryCard > footer {
-  font-size: 80%;
+  //font-size: 80%;
   height: 10%;
   width: $full;
   border-right: inherit;
@@ -318,7 +332,7 @@
 .paymentMode {
   width: $full;
   max-width: $letterWidth;
-  min-width: 16em;
+  //min-width: 16em;
   margin-inline: auto;
   color: darken($praymaryColor, 30%);
   & > p:first-of-type,
@@ -399,10 +413,10 @@
 
 
 .twoCards {
-  & > span:first-of-type:after {
-    content: "2";
-  }
-  #platinumCard2 {
-    display: block;
-  }
+  // & > span:first-of-type:after {
+  //   content: "2";
+  // }
+  // #platinumCard2 {
+  //   display: block;
+  // }
 }

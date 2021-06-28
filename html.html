@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>AMEX card</title>
 
     <link rel="stylesheet" href="./scss/styles.css"/>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Hind+Madurai:wght@300&family=Mukta+Mahee:wght@200&family=Norican&family=Oxygen:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href=
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </link>
+<link rel="stylesheet" href="https://cdn.rawgit.com/infostreams/bootstrap-select/fd227d46de2afed300d97fd0962de80fa71afb3b/dist/css/bootstrap-select.min.css" />
+
+
+
 </head>
 <body id="headDocument">
     <header>
@@ -38,7 +42,25 @@
         </nav>
         </div>
     </header >
-    
+  
+
+<!-- Modal -->
+<div class="modal" id="sponershipModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-center align-items-center sponsership p-4">
+         <div class="mb-2">
+            <img src="../Assets/Project 3 - Sponsorship.png"/>
+            <div class="rounded-lg position-absolute top-50 bg-warning text-white h1">+5€ </div>
+        </div>
+        <div class="py-3 h6 mb-0">This offer has expired but you can buy an AMEX card</div>
+        <button data-dismiss=modal class="mb-3 rounded-lg bg-warning text-white font-weight-bold">I ORDER <i class="arrow right"></i></button>
+        <div><small>this offer has expired</small></div>
+        <div id="countdown" class="d-flex flex-row"></div>
+    </div> 
+    </div>
+  </div>
+</div>
+  
     <main   id="page1"> 
         <div>
             <div>
@@ -64,97 +86,134 @@
         </div>
         </div>
         
-       <section >
-            <div class="pict">
-                <img id="platinum_card" src="./assets/platinum-card-metal_480x304.png"/> 
-                 <img id="badge_price" src="./assets/badge_price.png"/>
+       <section class="container-lg row mx-auto mt-3">
+            <div class="pict col-12 px-0 col-sm-4">
+                    <div>
+                        <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        </div>
+                    <img id="platinum_card" class="img1"  src="./assets/chime card for Project 3.jpg"/>
+                    </div>    
+                 <img id="badge_price" class="img2" src="./assets/badge_price.png"/>
             </div>
-             <form >
-                <p>PERSONAL DETAILS</p>
+             <form  name="personalDetailsForm" class="col-12 col-sm-8" id="personalDetailsForm" action="#page2" class="container">
+              <div class="row">
+                <p class="col-12 h3 text-muted formTitle">PERSONAL DETAILS</p>
                 <hr id="mainHr">
                 
-                    <label>
+                    <label class="col-12">
                         Title
-                        <label><input type="radio" name="title" value="Mr"/>Mr</label>
-                        <label><input type="radio" name="title" value="Mis"/>Mis</label>
-                        <label><input type="radio" name="title" value="Corporate"/>Corporate</label>
-                        <label><input type="radio" name="title" value="Association"/>Association</label>
+                        <label class="pl-1"><input type="radio" name="title" value="Mr" checked/>Mr</label>
+                        <label class="pl-1"><input type="radio" name="title" value="Mis"/>Mis</label>
+                        <label class="pl-1"><input type="radio" name="title" value="Corporate"/>Corporate</label>
+                        <label class="pl-1"><input type="radio" name="title" value="Association"/>Association</label>
                     </label>
-                    <div class="grid">
-                    <span >
-                        <label for="firstName">
+                    
+                    <span class="col-12 col-sm-6">
+                        <label for="firstName"  class="text-capitalize">
                             First Name    
                         </label>
-                        <input type="text" id="firstName" name="firstName" />
+                        <input class="" type="text" id="firstName" name="firstName" />
                     </span>
-                    <span >
+                    <span class="col-12 col-sm-6 ">
                         <label for="lastName">
                             Last Name 
                         </label>
                         <input type="text" id="lastName" name="lastName" />
                     </span>
+                   
+                 <div class="organization display-none row order-2 no-gutters">
+                   <hr class="hr"/>
+                    <h5 class="text-left pl-3 py-2 ml-0">Card Acount Parameters</h5>
+                    <span >
+                    <label  class=" col-12 col-sm-6">
+                        Please specify the number of cards you would like.
+                    </label><!-- onfocus='this.size=1.5;' -->
+                    <select    id="cardsNumber" name="cardsNumber" class="col-12 col-sm-6 no-gutters pl-0 ml-3">
+                       
+                    </select>
+                    </span>
+                    <div class="display-block mt-3 pl-3 customizeConfirm" >
+                        <input id="Customize" class="checkbox" type="checkbox" name="Customize">
+                            <label id="Customize" for="Customize">
+                                <span >
+                                    Customize & IBAN selection
+                               </span> 
+                            </label> 
+                     </div>
                     
-                    <span class="card1">
-                        <span>
+                </div>
+                
+                    <span class="card1 no-gutters col-12 row ">
+                        <span class="col-12 pr-2 col-sm-6">
                         <label for="customField">
                         Custom Field
-                        
                         </label >
                         <input type="text" id="customField" name="customField" />
-                    </span>
-                        <span >
-                        <label >
+                        </span>
+                        
+                        <span class="col-12 pl-2 col-sm-3 ibunSapn">
+                        <label class="mb-0">
                         <span class="IBAN">IBAN UK </span>  
-                            <label  >
-                                <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
-                                <img src="./assets/united-kingdom.png" class="flagIcon">
+                            <label class="mb-0" >
+                                <input type="radio" checked name="ibun" value="UK" class="flagRadio"  hidden/>
+                                <img class="mb-0" src="./assets/united-kingdom.png" class="flagIcon">
                             </label>
                             <label >
-                                <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
-                                <img src="./assets/france.png"  class="flagIcon">
+                                <input  type="radio" name="ibun" value="FR" class="flagRadio" hidden/>
+                                <img class="mb-0 " src="./assets/france.png"  class="flagIcon">
                             </label>
                         </label>
-                        <input  type="button" id="addCard" name="addCard" value="ADD CARD" tabindex="0" class=""/>
+                        
                     </span>
+                    <input class="mt-4"  type="button" id="addCard" name="addCard" value="ADD CARD" tabindex="0" class=""/>
                     </span>
                 
-                    <span class="card2 display-none">
+                    <span class="card2 row col-12 no-gutters display-none" name="card2">
+                        <span class="col-12 pr-2 col-sm-6">
                         <label for="customField2">
                         Custom Field
                         </label >
                         <input type="text" id="customField2" name="customField" />
-                        <span >
+                        </span>
+                        <span class="col-12 pl-2 col-sm-3 ibunSapn">
+
                         <label >
-                        <span class="IBAN">IBAN UK </span>  
+                        <span class="IBAN ">IBAN UK </span>  
                             <label  >
-                                <input type="radio" name="title" value="uk" class="flagRadio"  hidden/>
+                                <input type="radio" checked name="ibun2" value="UK" class="flagRadio"  hidden/>
                                 <img src="./assets/united-kingdom.png" class="flagIcon">
                             </label>
                             <label >
-                                <input  type="radio" name="title" value="france" class="flagRadio" hidden/>
+                                <input  type="radio" name="ibun2" value="FR" class="flagRadio" hidden/>
                                 <img src="./assets/france.png"  class="flagIcon">
                             </label>
                         </label>
-                        <input type="button" id="deleteCard" name="deleteCard" value="DELETE CARD"/>
+                        
                     </span>
+                    <input class="mt-4" type="button" id="deleteCard" name="deleteCard" value="DELETE CARD"/>
                     </span>
-                
-                    <span >
-                        <label for="dateOfBirth">
+                <div class="row  ml-0 w-100">
+                    <span class="col-12 col-sm-6">
+                    
+                        <label for="dateOfBirth" >
                             Date Of Birth
                         </label >
-                        <input type="text" id="dateOfBirth" name="dateOfBirth" pattern=\d{1,2}\/\d{1,2}\/\d{4}/>
-                        <span class="subText">(For example: 12/31/1970)</span>
+                        <input type="text" id="dateOfBirth" name="dateOfBirth" />
+                        <span class="subText display-block">(For example: 31/12/1970)</span>
                     </span>    
                 </div>
-                    <label class="labelConfirm" >
-                        <span >
-                        I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
+                    <label  class="col-12 no-gutters mt-3 d-flex justify-content-between labelConfirm  order-3" >
+                        <span class="col-9">
+                            I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
                        </span>
-                    <input id="confirm" type="checkbox" name="confirm" hidden/>
-                    <span class="s"></span>
-                </label>
-               
+                        <input id="confirm"  type="checkbox" checked name="confirm"  required/>
+                        <span class="s mt-1"></span>
+                    </label>
+               <button id="hiddenbutton" hidden>submit</button>
+            </div>
             </form>
 
         </section>
@@ -162,10 +221,13 @@
        
          <section class="buttonSection"><!--class="footerSection" -->
             <a href="#page0"> 
-                <button type="button" class="previous" ><i class="arrow left"></i> PREVIOUS</button> </i></button>
-            
-                <a href="#page2"><button type="button" class="continue" >CONTINUE 
-                <i class="spinner"></i><i class="arrow right"></i></button></a>
+                <button type="button"  onclick="" class="previous" ><i class="arrow left"></i> PREVIOUS</button> </i></button>
+            </a>
+                <!-- <a href="#page2"> -->
+                    <label type="button"  for="hiddenbutton"  class="continue" >CONTINUE 
+                <i class="spinner"></i><i class="arrow right"></i>
+                    </label>
+        <!-- </a> -->
                     
                  
         </section>
@@ -193,29 +255,66 @@
             </ol>
         </div>
         </div>
-        <section >
-    </label>
-        <div>
-            <div class="pict pictPage2">
-                <img id="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
-                <img id="badgePrice" src="./assets/badge_price.png"/>
-        </div>
-    </div >
-             <form >
+        <section class="container-lg row mx-auto mt-3">
+
+              
+              <!-- Modal -->
+              <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content ">
+                    <div class="modal-header d-block p-2">
+                      <h5 class="modal-title" id="exampleModalLabel">Email Address suggestions</h5> 
+                        <button type="button" class="close mb-2" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                    </div>
+                    <div class="modal-body p-1">
+                      
+                      <form class="border-0">
+                          <label class="correct display-block">
+                            <input type="radio" class="m-1" name="emailSuggestion">
+                        </label>
+                          
+                          <label class="wrong" >
+                            <input type="radio" class="m-1" checked  name="emailSuggestion">
+                        </label>
+                          
+                      </form>
+                    </div>
+                    <div class="modal-footer p-2">
+                        <button type="button" class="btn-warning text-white px-2 ok" data-dismiss="modal">OK</button>
+                      <button type="button" class="btn-light text-dark px-2" data-dismiss="modal">CLOSE</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+    <!-- </label> -->
+        <div class="col-12 col-sm-4 px-0 pict pictPage2">
+            <!-- <div class=" "> -->
+                <!-- <div> -->
+                <img id="platinumCard" class="img1" src="./assets/chime card for Project 3.jpg"/>
+               <!-- </div> -->
+                <img id="badgePrice" class="img2" src="./assets/badge_price.png"/>
+            <!-- </div> -->
+        </div >
+             <form name="detailsForm"  id="detailsForm" name="detailsForm" action="#page3" class="container col-12 col-sm-8">
                 <p >MY DETAILS</p>
 
                 <hr id="mainHr">
-                <fieldset>
-                    <span >
+                <fieldset class="row">
+                    <span class="col-12">
                         <label for="email">
                             Email
                         </label >
                         <input type="text" id="email" name="email" pattern=^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/>
                         <span class="subText">(To connect to your Customer Area)</span>
                     </span>    
-               <div >
-                    <span  >
-                        <label >
+               <!-- <div > -->
+                    <div class="col-12 col-sm-6" >
+                        <label class="col-12 pl-0">
                             Area Code  
                             <select name="areaCode"  >
                                 <option value="44">+44 (United Kingdom)</option>
@@ -223,31 +322,31 @@
                                 <option value="972">+972 (Israel)</option>
                             </select>
                         </label>
-                    </span>
-                    <span>
-                        <label for="phoneNumber">
+                    </div>
+                    <span class="col-12 col-sm-6">
+                        <label for="phoneNumber" >
                             Phone Number
                         </label>
                         <input type="tel" pattern=/\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b/g‏ id="phoneNumber" name="phoneNumber" />
                         <span class="subText">(To receive your PIN code)</span>
                     </span>
-                </div>
+                <!-- </div> -->
                </fieldset>
                
                 <p class="font-medium">RESIDENTIAL ADDRESS</p>
-                <fieldset>
+                <fieldset class="row fontSize-small">
                     
-                    <span >   
-                        <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
+                    <span class="col-12">   
+                        <input type="text" id="searchFor" name="searchFor" placeholder="search for an address"/>   
                     </span>    
                     <div >
-                    <span >
+                    <span class="col-12 col-sm-6">
                         <label for="address">
                             Address
                         </label >
                         <input type="text" id="address" name="address" />
                     </span>
-                    <span >
+                    <span class="col-12 col-sm-6">
                         <label for="additionalAddress">
                             Additional Address Details
                         </label >
@@ -255,20 +354,20 @@
                     </span>
                     </div>
                     <div >
-                    <span >
+                    <span class="col-12 col-sm-4">
                         <label for="city">
                             City
                         </label >
                         <input type="text" id="city" name="city" />
                     </span>
-                    <span >
+                    <span class="col-12 col-sm-4">
                         <label for="zipCode">
                             Zip Code
                         </label >
                         <input type="text" id="zipCode" name="zipCode" />
                     </span>
                 
-                    <span >
+                    <span class="col-12 col-sm-4">
                         <label for="country">
                             Country
                             <select name="country">
@@ -281,8 +380,8 @@
                    
                 </div>
                     <hr class="dottedHR">
-                <div class="display-block">
-                <input id="delivery" type="checkbox" name="delivery">
+                <div class="display-block ">
+                <input id="delivery" class="checkbox ml-3" type="checkbox" name="delivery">
                     <label id="labeldelivery" for="delivery">
                         <span id="confirmText">
                            
@@ -290,44 +389,45 @@
                        </span> 
                     </label> 
                         
-                    <fieldset>
-                        <span >   
+                    <fieldset >
+                        <div class="col-12">   
                             <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
-                        </span>    
+                        </div>    
                    
                         <div >
-                            <span >
-                                <label for="address">
+                            <span class="col-12 col-sm-6">
+                                <label for="deliveryAddress1">
                                     Address
                                 </label >
-                                <input type="text" id="address" name="address" />
+                                <input type="text" id="deliveryAddress1" name="deliveryAddress1" />
                             </span>
-                            <span >
-                                <label for="additionalAddress">
+                            <span class="col-12 col-sm-6">
+                                
+                                <label for="deliveryAddress2">
                                     Additional Address Details
                                 </label >
-                                <input type="text" id="additionalAddress" name="additionalAddress" />
+                                <input type="text" id="deliveryAddress2" name="deliveryAddress2" />
                             </span>
                             </div>
                             <div >
-                            <span >
-                                <label for="city">
+                            <span class="col-12 col-sm-4">
+                                <label for="deliveryCity">
                                     City
                                 </label >
-                                <input type="text" id="city" name="city" />
+                                <input type="text" id="deliveryCity" name="deliveryCity" />
                             </span>
-                            <span >
-                                <label for="zipCode">
+                            <span class="col-12 col-sm-4">
+                                <label for="deliveryZipCode">
                                     Zip Code
                                 </label >
-                                <input type="text" id="zipCode" name="zipCode" />
+                                <input type="text" id="deliveryZipCode" name="deliveryZipCode" />
                             </span>
                         
-                            <span >
-                                <label for="country">
+                            <span class="col-12 col-sm-4">
+                                <label for="deliveryCountry">
                                     Country
-                                    <select name="country">
-                                        <option value="United">United Kingdom</option>
+                                    <select name="deliveryCountry">
+                                        <option value="United Kindom">United Kingdom</option>
                                         <option value="France">France</option>
                                         <option value="Israel">Israel</option>
                                     </select>
@@ -336,13 +436,14 @@
                         </div>
                     </fieldset>
                 </fieldset>
-            </div>
+            <!-- </div> -->
                
                 
-                <fieldset>
-                    <span >
+                <fieldset class="row">
+                    <span class="col-12">
                         <label >
                             Secret Question
+                        </label >
                             <select name="secretQuestion">
                                 <option value="secretQuestion1">​What is your mother's first name?</option>
                                 <option value="secretQuestion2">​What is the name of your favorite book?</option>
@@ -350,50 +451,55 @@
                             </select>
                             <span class="subText">To help secure your card and your account</span>
                             
-                        </label >
+                        
                     </span>
                
-                   <span >
+                   <span class="col-12">
                         <label for="answer">
                             Answer
                         </label >
                         <input type="text" id="answer" name="answer" />
                     </span>
                 
-                    <span >
+                    <span class="col-12 firstDeposit1">
                         <label >
-                            Card #1 First Deposit 
-                            <select name="secretQuestion">
+                            Card #1 First Deposit
+                        </label > 
+                            <select name="firstDeposit1">
                                 <option value="0">​0 Eur</option>
                                 <option value="10">10 Eur</option>
                                 <option value="20">20 Eur</option>
                             </select>
-                            
-                        </label >
+                             
                     </span>
                
-                <p class="Paragraph">
+                <p class="col-8">
                     By clicking on VALIDATE i acknowledge that my AMEX card is a customized 
                     product and accept its immediate production from the approval of my order
                      and, as such, expressly renounce to exercise my right to cancel my order
                       pursuant to the provisions of article L.121-21-8 of the consumer code
                 </p>
-                <p>
+                <p class="col-12">
                     
-                    <label class="labelConfirm" >
-                        <span>
-                            I would like to receive exclusive offers from AMEX Card partners                       </span>
-                    <input class="confirm" type="checkbox" name="confirm" hidden/>
-                    <span class="s"></span>
-                </label>
+                    <label class="labelConfirm  no-gutters pl-0 mt-3 d-flex justify-content-between" >
+                        <span class="col-9">
+                            I would like to receive exclusive offers from AMEX Card partners   
+                        </span>
+                    <input id="offersConfirm" type="checkbox" name="confirm" checked/>
+                    <span class="s mt-1"></span>
+                     </label>
                 </p>
             </fieldset>
+            <button id="submitForm2" type="submit" hidden></button>
             </form>
         </section>
         
         <section >
             <a href="#page1"><button type="button" class="previous"><i class="left arrow"></i> PREVIOUS</button> </button></a>
-            <a href="#page3"><button type="button" class="continue"><i class="spinner"></i> CONTINUE <i class="right arrow"></i></button></a>
+            <!-- <a href="#page3"> -->
+                <label for="submitForm2"  class="continue"><i class="spinner"></i> CONTINUE <i class="right arrow"></i>
+                </label>
+            <!-- </a> -->
         </section>
         
     </main> 
@@ -423,14 +529,14 @@
             </ol>
         </div>
         </div>
-   <section>
+   <section class="container-lg row no-gutters mx-auto mt-3"> 
     
-        <div >
+        <div class="col-12 col-sm-7">
             
             <div class="detailsSummary">
-                <span class="one"></span>
-                <img id="platinumCard1" class="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
-                <img id="platinumCard2" class="platinumCard" src="./assets/platinum-card-metal_480x304.png"/>
+                <span class="one" data-content="1"></span>
+                <img id="platinumCard1" class="platinumCard" src="./assets/chime card for Project 3.jpg"/>
+                <img id="platinumCard2" class="platinumCard display-none" src="./assets/chime card for Project 3.jpg"/>
                 <div class="letter">
                     <div class="properties">
                         <div class="topText">
@@ -440,10 +546,10 @@
                        <span >T</span>  
                     </div>
                     <div class="customerDetails">
-                        <div >John Doe</div>
-                        <div >22 London Road</div>
-                        <div >London, SE1 6JW</div>
-                        <div >United Kingdom</div>
+                        <div class=""></div>
+                        <div ></div>
+                        <div ></div>
+                        <div ></div>
                     </div>
                 </div>
                 
@@ -452,56 +558,51 @@
             <div class="summaryCard">
                 <span class="sticker check"></span>
                 <div class="cardDetails">
-                    
-                    <ul>
+                    <div>
+                    <!-- <ul> -->
                         <li>Card type: AMEX International</li>
                         <li>Currency: EUR</li>
                         <li>IBAN: UK</li>
-                        
-                    </ul>
+                    </div>    
+                    <!-- </ul> -->
                 </div>
                 <div class="paymentSummary">
                     
                     <span class="iconBackground">
                         <span class="iconify" data-icon="bi:cart-dash" data-inline="false"></span>
                     </span>
-                    
-                <ul>
-                    <li><span> 1 X card (annual fees)</span><span>29.90 &#8364;</span> </li>
-                    <li class="indentation">
+                    <div class="container no-gutters">
+                    <li>
+                    <div>
+                        <span> 1 X card (annual fees)</span>
+                        <span>29.90 &#8364;</span>
+                    </div>
+                    <div  class="indentation">
                         <span>
                             <i class="fa fa-trash-o"></i>
-                            <span>First deposit</span> 
-                            
+                            <span>First deposit</span>  
                         </span>
-                        <span>10.00 &#8364;</span>
-                        </li>
-                        
-                        <li> 
-                            
-                            <span>
-                                <i class="fa fa-trash-o"></i>
-                            1 X card (annual fees)
-                            </span>
-                            <span>29.90 &#8364;</span> 
-                        
-                    </li>    
-                </ul>
+                        <span></span>
+                    </div>
+                   </li>      
             </div>
-                <div class="coupon">
+            </div>
+                <form id="NeosurfCoupon" name="couponForm" class="coupon mb-4 pb-3 d-flex flex-column flex-lg-row" >
+                    <!-- <form name="coupon"> -->
                     <label for="coupon">COUPON <span>(optional)</span></label>
-                    <input id="coupon" placeholder="Write the coupon code here ...">
+                    <input id="coupon" name="coupon" placeholder="Write the coupon code here ...">
                     <button class="disabled">VALIDATE</button>
-                </div>
+                    <!-- </form> -->
+                </form>
                 <footer class="background-blue width-100">
                     <span>Total <i class="right arrow"></i></span>
-                    <span>39.90 &#8364;</span>
+                    <span></span>
                 </footer>
             </div>
         </div>
         </div>
    
-        <div class="paymentMode">
+        <div class="paymentMode col-12 col-sm-5">
             <p >PAYMENT MODE</p>
             <hr class="mainHr">
              <h4>Select your payment method</h4>
@@ -568,14 +669,14 @@
     </section>
 </main>
 
-<main class="defualt"  id="page0">
+<main class="defualt"  id="page0" class="container-fluid">
     <p class="img">
 
     </p>
     <h1>Choose Your <span>Card</span></h1>
     <hr>
-    <div>
-    <div>
+    <div class="row ">
+    <div class="col-12 col-sm-4">
         <a href="#page1">
             <img src="./assets/platinum-card-metal_480x304.png">
         </a>
@@ -587,7 +688,7 @@
         <li>IBAN/RIB included</li>
     </ul>
     </div>
-    <div>
+    <div class="col-12 col-sm-4">
        <a href="#page1"> <img  src="./assets/amex gold.jpg"></a>
         <h2>classic <i class="right arrow"></i></h2>
         <ul>
@@ -597,8 +698,8 @@
             <li>Balance up to €10.000</li>
             <li>Reloading up to €15.000/month</li>
         </ul>
-        </div>
-        <div>
+        </div >
+        <div class="col-12 col-sm-4">
             <a href="#page1">
             <img src="./assets/amex blue.jpg">
             </a>
@@ -626,7 +727,7 @@
                  <em>and</em>  <span class="number">274</span> Days</span>
             
          </div>
-         <div ><!--class="mainFooter" -->
+         <div class="d-flex flex-column flex-sm-column-reverse flex-lg-column flex-lg-row-reverse justify-content-center"><!--class="mainFooter" -->
             
              <div > <!--class="forterParagraph" -->
                 <h3><span class="bigger">AMEX</span> at your service</h3> 
@@ -638,7 +739,23 @@
             <img src="./assets/trust-us.png" class="forterPicture"/>
         </div>
     </footer>
+
+     
+    <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    
-    <script src="js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
+
+    <script src="https://cdn.rawgit.com/infostreams/bootstrap-select/fd227d46de2afed300d97fd0962de80fa71afb3b/dist/js/bootstrap-select.min.js"></script>
+
+    <script src="js/jsPage1.js"></script>
+    <script src="js/jsPage2.js"></script>
+    <script src="js/jsPage3.js"></script>
 </body>
 </html>

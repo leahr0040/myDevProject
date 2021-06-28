@@ -1,0 +1,26 @@
+{
+    "title": "Mr",
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "19/11/1999",
+    "ibun": "UK",
+    "customField": "",
+    "confirm": "true",
+    "email": "example@gmail.com",
+    "areaCode": "44",
+    "phoneNumber": "055-555555",
+    "searchFor": "",
+    "address": "London",
+    "additionalAddress": "",
+    "city": "London",
+    "zipCode": "11111",
+    "country": "United Kindom",
+    "deliveryAddress1": "",
+    "deliveryAddress2": "",
+    "deliveryCity": "",
+    "deliveryZipCode": "",
+    "secretQuestion": "secretQuestion1",
+    "answer": "aaaaa",
+    "firstDeposit1": "0"
+    
+}

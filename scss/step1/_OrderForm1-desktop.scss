@@ -15,21 +15,24 @@ main > section {
     }
 
 }
-.pict img{
-     &:first-of-type{
-        width:70%;
-    }
-    &:nth-of-type(2){
+.pict {
+    // div:first-of-type{
+    //     width:70%;
+    // }
+    //  &:first-of-type{
+    //     width:70%;
+    // }
+    img:nth-of-type(2){
         width:50%;
     }
 }
-[type="text"],select,[type="tel"]{
-    height: 25px;   
-} 
+// [type="text"],select,[type="tel"]{
+//     height: 25px;   
+// } 
 form{
     font-size: .9em;
 & > span,.grid>span,fieldset>span,fieldset>div>span {
-    margin-top: .5rem;
+    margin-top: .9rem;
   }
   .labelConfirm > span:first-child{
         margin-block: .7em;

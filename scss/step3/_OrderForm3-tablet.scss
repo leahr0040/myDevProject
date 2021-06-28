@@ -1,6 +1,6 @@
 
 #page3>section:first-of-type{
-    @include grid(1fr 1fr );
+   // @include grid(1fr 1fr );
     &>div{
         &:first-child{
         margin-right: 0;

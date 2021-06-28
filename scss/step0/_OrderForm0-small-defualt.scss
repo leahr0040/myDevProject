@@ -100,6 +100,7 @@ main{
   }
    p{
       padding-inline:6%;
+      
     }
    &>h1{
       font-weight: normal;
@@ -138,7 +139,7 @@ main{
 footer {
     height: 80vh;
     background-color: $praymaryColor;
-    @extend %flexColumn;
+    // @extend %flexColumn;
     font-weight: bold;
     &>div:first-child{
       background-color: $additionalColor;
@@ -150,7 +151,7 @@ footer {
       font-size: small;
       padding-bottom: $gutter;
       box-sizing: border-box;
-      @extend %flexColumn;
+      // @extend %flexColumn;
       & > div {
         padding-top: 1%;
         font-size: 1.2em;
@@ -178,7 +179,7 @@ footer {
       }
     }//div:first-child
     &>div:nth-child(2){
-      @extend %flexColumn;
+      // @extend %flexColumn;
       width: 75%;
       margin: 0px auto;
       height: 70%;
@@ -242,4 +243,79 @@ footer {
   }
   #page3:target~ .p3{
     display:block !important;
+  }
+  .rounded-lg{
+    border-radius:1.3em;
+  }
+
+  
+  #sponershipModal .modal-dialog{
+    max-width: 550px;
+  }
+  
+  .sponsership{
+    
+     &>div>div{
+       width:5em;
+      left:50%;
+      top:3.2em;
+      transform: translateX(-50%);
+     }
+     button{
+       height: 2.8em;
+     }
+  }
+  .countdownDate{
+    height:2em;
+    width:2em;
+    font-size:larger ;
+    
+  }
+  option{
+    height: 30px;
+    
+  }
+   .dropdown-toggle::after{
+    position: relative;
+    right: 1.4em;
+    top: -50%;
+    transform: translateY(50%);
+  }
+  .bootstrap-select>.dropdown-toggle{
+    padding-right: 0 !important;
+  }
+  .dropdown-toggle,.dropdown-toggle:hover
+  ,.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    border: 1px solid #e6e3e3;
+    border-radius: 2px;
+    height: 30px;
+    width: 100%;
+    font-size: .9em;
+    color: #867777;
+    box-sizing: border-box;
+    background-color:white;
+    
+   
+  }
+  .bootstrap-select .dropdown-toggle:focus{
+    outline-color:white !important;
+  }
+  .dropdown-menu{
+    font: size 0.9em;
+  }
+.dropdown-menu > li > a:hover {
+  //text-decoration: none;
+  //color: ;
+  color: #848282;
+  background-color: var(--warning);
+}
+.dropdown-menu > li > a:focus{
+  
+  color: #848282;
+  background-color:lighten(#ffc107,20%);
+}
+  .dropdown-item{
+    padding-right:0;
+    padding-left: 5px;
+    
   }

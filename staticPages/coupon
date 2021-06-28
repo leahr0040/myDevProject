@@ -1,0 +1,23 @@
+
+[
+    {
+        "type":"Discount per card",
+        "amount":"5",
+        "validCode":"BF5555"
+    },
+    {
+        "type":"Discount per card",
+        "amount":"10",
+        "validCode":"BF1111"
+    },
+    {
+        "type":"Discount per order",
+        "amount":"5",
+        "validCode":"OR2222"
+    },
+    {
+        "type":"Discount per order",
+        "amount":"10",
+        "validCode":"OR1111"
+    }
+]

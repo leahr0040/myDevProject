@@ -98,7 +98,12 @@ $clipPathThird:polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
         width:($i * 100%)/12 -$gutter *2;
     }
 //}
+[class*="col"]{
+    padding-right: 0;
+}
 
-
+.marginTopspace{
+    margin-top:.9em
+}
 
 

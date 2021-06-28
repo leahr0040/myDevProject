@@ -15,7 +15,9 @@
 
     }
 }
-
+.progressList2>div:nth-child(2) svg{
+  color:white;
+}
 
 .checkmark{
     border-radius: 50%;
@@ -32,17 +34,17 @@
     display: block;
     margin: auto auto;
     margin-top: 15%;
-    width: 16%;
-    height: 40%;
+    width: 25%;
+    height: 50%;
     border: solid white;
     border-width: 0 2px 2px 0;
     -webkit-transform: translate;
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-.pictPage2{
-  display: none;
-}
+// .pictPage2{
+//   display: none;
+// }
   select{
     color: rgb(132, 130, 130);
     padding: 1px 2px;
@@ -59,7 +61,7 @@
   }
 
 fieldset{
-  @extend %flexColumn;
+  //@extend %flexColumn;
   width:$full;
   padding:0;
   border:none;
@@ -70,13 +72,14 @@ fieldset{
     border-bottom: none;
   }
 }
+
   .dottedHR {
     border: none;
     border-top: 1px dashed $praymaryColor;
     margin-block: 4%;
     width: $full;
   }
-  #delivery {
+  .checkbox {
      -webkit-appearance: none;
     width: 15px;
     height: 15px;
@@ -84,11 +87,11 @@ fieldset{
     background-color:darken($praymaryColor,10%) ;
     box-shadow: 0 1px 1px 0px $praymaryColor inset;
   }
-  #delivery::before {
+  .checkbox::before {
     content: "";
     display: block;
   }
-  #delivery:checked
+  .checkbox:checked
   {
       &::before {  
       position: relative;
@@ -115,4 +118,13 @@ fieldset{
   
 .Paragraph{
   width: 70%;
+}
+#myModal 
+  {
+    .modal-dialog{
+      max-width: 450px;
+    }
+    button{
+    width: fit-content;
+    }
 }

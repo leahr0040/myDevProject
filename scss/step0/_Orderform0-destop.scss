@@ -54,6 +54,7 @@ header
     width:$desktopWidth;
     margin:auto;
 }
+
 footer {
     height: 20%;
     
@@ -67,7 +68,7 @@ footer {
       }
     }//div:first-child
     &>div:nth-child(2){
-      flex-direction:row-reverse;
+      // flex-direction:row-reverse;
       width:65%;
       padding-top: 0;
       text-align: start;

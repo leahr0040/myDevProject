@@ -10,7 +10,7 @@
     &>div{
         display: flex;
         justify-content:space-between;
-        column-gap: 2%;
+        //column-gap: 2%;
     }
   }
   .display-block{
@@ -20,4 +20,6 @@
 .Paragraph{
     width:80%;
 }
-
+.fontSize-small{
+    font-size: .9em;
+}
