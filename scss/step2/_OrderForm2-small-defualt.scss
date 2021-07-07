@@ -65,19 +65,22 @@ fieldset{
   width:$full;
   padding:0;
   border:none;
-  border-bottom:1px solid$praymaryColor;
+  //border-bottom:1px solid$praymaryColor;
   margin-bottom: $gutter;
   padding-bottom: $gutter;
-  fieldset{
-    border-bottom: none;
-  }
+  // fieldset{
+  //   border-bottom: none;
+  // }
 }
 
-  .dottedHR {
+  .dottedHR,.regHR {
     border: none;
     border-top: 1px dashed $praymaryColor;
     margin-block: 4%;
     width: $full;
+  }
+  .regHR{
+    border-top: 1px solid $praymaryColor;
   }
   .checkbox {
      -webkit-appearance: none;
@@ -108,13 +111,16 @@ fieldset{
     transform: rotate(40deg);
     }
     &~fieldset{
-     display:initial;
+     display:flex;
     }
   }
   #delivery:not(:checked)~fieldset{
     display:none;
   }
-  
+  #labeldelivery{
+    position: relative;
+    top: -.2em;
+  }
   
 .Paragraph{
   width: 70%;

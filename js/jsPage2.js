@@ -6,7 +6,7 @@ const form2=$("#detailsForm");
 let emailValue="";
 
 //functions
-const addCardFirstDepodit=()=>{
+const addCardFirstDepodit=()=>{//addfirst deposit2 if needed
   let firstDeposit2=form2.find(".firstDeposit2");
    if(!isOneCard ){
      if(firstDeposit2.length===0)
@@ -24,7 +24,6 @@ const addCardFirstDepodit=()=>{
 </span>`
   form2.find(".firstDeposit1").after(firstDeposit);
    selectStyle();
-  // firstDeposit2.addClass("display-none")
   }
   else{
     firstDeposit2.removeClass("display-none")
@@ -35,12 +34,12 @@ const addCardFirstDepodit=()=>{
    }
 }
 
-const removeCardFirstDepodit=()=>{
+const removeCardFirstDepodit=()=>{//remove first deposit 2
   form2.find(".firstDeposit2").addClass("display-none");
   delete wholeData.firstDeposit2;
 }
 
-const changeModalRadios=(selector,value,text)=>{//when change email suggestion radios buttons
+const changeModalRadios=(selector,value,text)=>{//email suggestion radios buttons
     const label=modal.find(selector);
     label.find("input").val(value);
     const children= label.children();
@@ -63,8 +62,8 @@ $(document.detailsForm.email).focusout((e)=>{
       "@hotmaill.com":"@hotmail.com",
       "@hotmail.con":"@hotmail.com"
     }
-    const extension=e.target.value.split('@')[1];
-    const index=Object.keys(emailSuggestion).indexOf(`@${extension}`)
+    const extension=e.target.value.split('@')[1];//the email domain
+    const index=Object.keys(emailSuggestion).indexOf(`@${extension}`)//if user email domain exsist in the Suggestion and where 
     if(index>-1)  
     {  
         const correctExtension=Object.values(emailSuggestion)[index];
@@ -121,8 +120,6 @@ const valid=$("#detailsForm").validate({
           deliveryAddress1: {
             required: true,
             deliveryMaxLength:30
-           
-           
           },
           deliveryAddress2:{
             deliveryMaxLength:30,
@@ -158,12 +155,12 @@ form2.submit(e=>{
    if(isValid){
       location.href ="#page3";
       const data= new FormData(form2[0]);
-      data.forEach((value,key,parent)=>{
+      data.forEach((value,key,parent)=>{//update in whole data
           wholeData[key]=value;
       })
       console.log(wholeData);
       updateDatailsOnLetter();
-      updateSummeryCard();
+      updateSummeryCard();//update thecardson summary
    }
   return false;
 })

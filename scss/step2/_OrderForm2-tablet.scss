@@ -13,6 +13,9 @@
         //column-gap: 2%;
     }
   }
+  .regHR:last-of-type{
+      display: none;
+  }
   .display-block{
       display: block;
   }

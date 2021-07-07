@@ -15,17 +15,59 @@ main > section {
     }
 
 }
-.pict {
-    // div:first-of-type{
-    //     width:70%;
-    // }
-    //  &:first-of-type{
-    //     width:70%;
-    // }
-    img:nth-of-type(2){
-        width:50%;
+.pict{
+    //margin-top: 4%;
+    &>div:first-child>div{
+                font-size:1em;
+                top: 4.5em;
+                line-height: 1.1;
+                padding-inline: 3%;
+                width: 100%;
+                div{
+                    text-align:left;
+                    
+                    //font-size:1em;
+                &:first-child{
+                    text-indent: 6em;
+                    font-size:.8em
+               // text-align:center;
+               // font-size:.8em
+            }
+            &:not(&:first-child){
+                position: relative;
+                top:.4em;
+            }
+            // }
+        }
+        
     }
-}
+    &>div:first-of-type{
+        display:block;
+        width: 13em;
+        margin: auto;
+    }
+      .img1{
+        display: block;
+        width:100%;
+       //@include width: 11em;
+        }
+        .img2{
+
+            width: 70%;
+          }
+    
+ }
+// .pict {
+//     // div:first-of-type{
+//     //     width:70%;
+//     // }
+//     //  &:first-of-type{
+//     //     width:70%;
+//     // }
+//     img:nth-of-type(2){
+//         width:50%;
+//     }
+// }
 // [type="text"],select,[type="tel"]{
 //     height: 25px;   
 // } 

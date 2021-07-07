@@ -4,8 +4,8 @@
   body {
     margin: 0;
     font-family: $praymaryFont;
-    width: $fullscreenWidth;
-    @extend %flexColumn;
+    //width: $fullscreenWidth;
+    //@extend %flexColumn;
   } //body
   img {
     object-fit: contain;
@@ -263,6 +263,7 @@ footer {
      }
      button{
        height: 2.8em;
+       width: 6em
      }
   }
   .countdownDate{
@@ -281,6 +282,9 @@ footer {
     top: -50%;
     transform: translateY(50%);
   }
+  .bootstrap-select{
+    padding-left: 15px;
+  }
   .bootstrap-select>.dropdown-toggle{
     padding-right: 0 !important;
   }
@@ -294,7 +298,7 @@ footer {
     color: #867777;
     box-sizing: border-box;
     background-color:white;
-    
+   // padding-left: 5px;
    
   }
   .bootstrap-select .dropdown-toggle:focus{
@@ -314,8 +318,11 @@ footer {
   color: #848282;
   background-color:lighten(#ffc107,20%);
 }
-  .dropdown-item{
+.dropdown-item{
     padding-right:0;
     padding-left: 5px;
     
+  }
+  .dropdown-toggle{
+    padding-left: 2px;
   }

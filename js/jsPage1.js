@@ -5,30 +5,34 @@
 //all veribles
 
 const wholeData={};
-const card2= document.getElementsByClassName('card2')[0];
+const card2= document.getElementsByClassName('cardM2')[0];//
 const detailsSummary=document.getElementsByClassName("detailsSummary")[0];
 const addCard= document.getElementById('addCard');
 const deleteCard= document.getElementById('deleteCard');
 let isOneCard=$(card2).hasClass("display-none");
 const form1=$("#personalDetailsForm");
 const fieldsOfForm=form1.find(">div>span");
-const Ibun=$(".ibunSapn");
+const Iban=$(".ibanSapn");
 let firstName="",lastName="",corporateName="",corporateStructure="",associationName="";
 const titleValues=[$(document.personalDetailsForm.title).val()];
 const validator=$.validator;
 const inputs=document.personalDetailsForm.elements
 const customField=document.personalDetailsForm.customField[0];
 const fullName=[inputs[4],inputs[5]];
+const fullNameLength=26;
 const detailsOnCard=$(".pict>div:first-child>div");
 const fullNameOnCard=detailsOnCard.find("div:nth-child(2)");
 const customFieldOnCard=detailsOnCard.find("div:nth-child(3)")
 
 
 //all function definition
+ 
+//import jquery from "jquery"
 
 const selectStyle=()=>{
   $("select").addClass("selectpicker").selectpicker('refresh');
   $(".bootstrap-select").addClass("col-12 pl-0");
+  $(".organization .bootstrap-select").removeClass("pl-0");
 }
 
 const checkUrlParams=()=>{
@@ -43,13 +47,14 @@ const checkUrlParams=()=>{
       const {title}=data;
       document.personalDetailsForm.title.value=title;
       delete data.title;
-      Object.keys(data).forEach((key)=>{
+      Object.keys(data).forEach((key)=>{//put the data in the fields
         $(document.personalDetailsForm[key]).val(data[key]);
         $(document.detailsForm[key]).val(data[key]); 
       })
-      updateFullNameOnCard();
-      updateCustomFieldOnCard(customField.value);
-      titleChanges(title);
+      updateFullNameOnCard();//full name on credit card
+      updateCustomFieldOnCard(customField.value);//custom field on credit card
+      titleChanges(title);//display according to the title
+      selectStyle();
     })
     .fail(( jqXHR,textStatus, errorThrown)=>{
       console.log("jqXHR",jqXHR.responseText);
@@ -70,17 +75,17 @@ const checkUrlParams=()=>{
         const smallText=sponsershipModal.find('small');
         const counter=sponsershipModal.find('#countdown');
         if(obj.status.toLowerCase().includes("expired")){
-          counter.addClass("display-none");
+          counter.addClass("display-none");//remove count-down if exsist
           paragraph.text("This offer has expired but you can buy an AMEX card");
           smallText.text("this offer has expired");
         }
         else if(obj.status.toLowerCase().includes("valid")){
-          const displayPartOfCountdown=(partOfDate,str)=>{
+          const displayPartOfCountdown=(partOfDate,str)=>{//return a part of the count down element
             return `<span class="d-flex flex-column mx-2 "> <span class="countdownDate text-warning border border-warning font-weight-bold ">${partOfDate}</span><span>${str} </span></span>`
           }
           const status =obj.status.split(" ");
           const length = status.length
-          const endDate=new Date(Date.parse(`${status[length-1]} ${status[length-2]} ${status[length-3]}`));
+          const endDate=new Date(Date.parse(`${status[length-1]} ${status[length-2]} ${status[length-3]}`));//get the expiered date
           counter.removeClass("display-none").countdown(endDate, function(event) {
             $(this).html(event.strftime(''
               +displayPartOfCountdown('%d','Days')
@@ -92,7 +97,7 @@ const checkUrlParams=()=>{
           paragraph.html(`<span class='font-weight-bold'>Ezekiel Balouka</span> invite you to discover an 
           <span class='font-weight-bold'>Amex Mastercard</span><br/>
           Comlete this oreder and you will receive ${obj.reward.split("Reward of ")[1]}`);          
-          wholeData.reward=obj.reward;
+          updateSponsershipReward(obj.reward)
         }
           sponsershipModal.modal({
             show:true
@@ -109,8 +114,8 @@ const checkUrlParams=()=>{
   }
 }//end checkUrlParams
 
-const changeIbun=(e)=>{
-  $(e.target).parents(".ibunSapn").find("span").text(`IBUN ${e.target.value.toUpperCase()}`)
+const changeIban=(e)=>{//change the text according to which iban choosen
+  $(e.target).parents(".ibanSapn").find("span").text(`IBAN ${e.target.value.toUpperCase()}`)
 }
 const changeFieldsName=(firstName,lastName,nameDate)=>{//function to change the labels when change the title
    $(fieldsOfForm[0]).find("label:first-of-type").text(firstName);
@@ -122,37 +127,38 @@ const changeNameOfFirstField=(name)=>{//change the name of first field when chan
    $(fieldsOfForm[0]).find("label:first-of-type").text(camelCaseToSentence(name)).attr("for",name);
       $(fieldsOfForm[0]).find("input").attr("name",name);
 }
-const titleChanges=(titleValue)=>{
-  //const titleValue=e.target.value;
+const titleChanges=(titleValue)=>{//all the changes that when change the title
   const add=$(".organization");
-  const card=$(".card1");
-  const card2=$(".card2");
+  const card=$(".card1");// card one of MR/Mis
+  const card2=$(".cardM2");//card two of MR/Mis  //
   const formTitle=form1.find(".formTitle");
-  const prevVal=titleValues[titleValues.length-1];
-  titleValues.push(titleValue)
-  //save the prev value
-  if(prevVal==="Corporate"){
+  const prevVal=titleValues[titleValues.length-1];//the previous title value
+  titleValues.push(titleValue)//push the lastest titlevalue in order the save the data that wrote
+  
+  if(prevVal==="Corporate"){//save the data 
 
     corporateName=$(document.personalDetailsForm.firstName).val();
     corporateStructure=$(document.personalDetailsForm.lastName).val();
   }
   else if(prevVal==="Association"){
+    $(fullName[0]).attr("maxlength",fullNameLength)
     associationName=$(document.personalDetailsForm.associationName).val();
   }
   else{
     firstName=$(document.personalDetailsForm.firstName).val();
     lastName=$(document.personalDetailsForm.lastName).val();
   }
-  if(titleValue==="Corporate" || titleValue==="Association"){
+  if(titleValue==="Corporate" || titleValue==="Association"){//update the data that saved on fields
     updateCustomFieldOnCard("");
     formTitle.text(`${titleValue.toUpperCase()} INFORMATION`)
     if(titleValue==="Association")
     {
-      changeFieldsName("Company Name","Corporate Structure","Date of birth person in charge");
+      changeFieldsName("Company Name","Corporate Structure","Date of birth person in charge");//change the labels of the inputs
       $(fieldsOfForm[1]).addClass("display-none");
-      changeNameOfFirstField("associationName");
+      changeNameOfFirstField("associationName");//chanfe the name of first input
       $(document.personalDetailsForm.associationName).val(associationName);
-      updateFullNameOnCard(fullName[0].value,"");      
+      updateFullNameOnCard(fullName[0].value,"");
+      $(document.personalDetailsForm.associationName).attr("maxlength",20);    
     }
     else{
       changeNameOfFirstField("firstName");
@@ -162,6 +168,7 @@ const titleChanges=(titleValue)=>{
       $(document.personalDetailsForm.lastName).val(corporateStructure);
       updateFullNameOnCard();
     }
+    //remove the Mr/Mis data and show the rellvant data
     const customizeDiv=add.find(".customizeConfirm");
     const customizeInput=customizeDiv.find("#Customize");
     add.removeClass("display-none");
@@ -176,7 +183,7 @@ const titleChanges=(titleValue)=>{
       a.removeClass("display-none").removeClass("card1");
       a.attr("name",`card${name}`)
       a.find(">span:first-of-type input").attr("name",`customField${name}`)
-      a.find(">span:nth-of-type(2) input").attr("name",`ibun${name}`).on("change",changeIbun);
+      a.find(">span:nth-of-type(2) input").attr("name",`iban${name}`).on("change",changeIban);
       return a;
     }
     const cardsChange=(e)=>{//when change the number of selected cards
@@ -187,25 +194,27 @@ const titleChanges=(titleValue)=>{
       }
       updateNumCardOnDetailsSummary(Number(e.target.value));
     }
-    if(cards.length===0){//if this is the first tyme to change to corporate or association
+    if(cards.length===0){//if this is the first time to change to corporate or association
     
         cardClone.find("#addCard").remove();
         customizeDiv.after(`<div class='cards ${customizeInput[0].checked===false?'display-none':''}'></div>`);
         cards=add.find(".cards");
         cards.append(cardToAdd(1))
         let options="";
-        let option=""
         for(i=0;i<6; i++){
           options+=`<option  value=${i+1} >${i+1} cards </option>`
         }
         const sel=add.find(" select");
-        sel.append(options).on("change",cardsChange);
-        selectStyle();
+        sel.append(options).on("change",cardsChange);//add cards option to the select
+        selectStyle();//when update a select eleemnt should refresh the plugin
     }
     updateNumCardOnDetailsSummary(Number(add.find(" select").val()));
     customizeInput.on("change",(e)=>{//when change the checkbox of Customize & IBAN selection
       const cards=add.find(".cards");
-      cards.toggleClass("display-none")
+      if(e.target.checked)
+        cards.removeClass("display-none");
+      else
+      cards.addClass("display-none");
     })
   }
   else{//if Mr or Mis
@@ -224,16 +233,17 @@ const titleChanges=(titleValue)=>{
     updateFullNameOnCard();
   }
 
+
 }//end of change title
 
-function updateFullNameOnCard(fname=fullName[0].value,lname=fullName[1].value){
+function updateFullNameOnCard(fname=fullName[0].value,lname=fullName[1].value){//on credit card
   fullNameOnCard.text(`${fname} ${lname}`)
 };
-function updateCustomFieldOnCard(custom){
+function updateCustomFieldOnCard(custom){//on credit card
   customFieldOnCard.text(custom)
 };
 
-const updateDateOnCard=()=>{
+const updateDateOnCard=()=>{//on credit card
   const date=new Date();
  detailsOnCard.find("div:first-child").text(`${date.getMonth()<9?'0':""}${date.getMonth()+1}/${(date.getFullYear()+2)%100}`)
 }
@@ -244,7 +254,7 @@ form1.find("input[name=title]").on("change",e=>{
  })
 
 
-Ibun.find("input").on("change",changeIbun);
+Iban.find("input").on("change",changeIban);
 
 addCard.onclick=()=>{
     card2.classList.remove("display-none");
@@ -262,14 +272,19 @@ addCard.onclick=()=>{
     isOneCard=true;
  }
 
- $(fullName).on("change",e=>{
+ $(fullName).on("change textInput input",e=>{//when change the full name .also change on credit card
   if(titleValues[titleValues.length-1]==="Association")
   updateFullNameOnCard(fullName[0].value,"");
   else
   updateFullNameOnCard()
+  let index=e.target===fullName[0]?1:0;
+  let length=e.target.value.length;
+  $(fullName[index]).attr("maxlength",fullNameLength-length);
+  if($(fullName[index]).val().length>=fullNameLength-length)
+    $(e.target).attr("maxlength",length);
 })
 
-$(customField).on("change",e=>{updateCustomFieldOnCard(customField.value)})
+$(customField).on("change textInput input",e=>{updateCustomFieldOnCard(customField.value)})
 
 
 //use functions  
@@ -283,7 +298,24 @@ updateCustomFieldOnCard(customField.value);
 
 //valid the first form
 
-const globalValidate=(form)=>{
+const inputmask_options = 
+  {
+    mask: "99/99/9999",
+  alias: "date",
+  placeholder: "dd/mm/yyyy",
+  insertMode: false
+}
+
+
+
+  $(document.personalDetailsForm.dateOfBirth).inputmask("99/99/9999", inputmask_options);
+  $(document.detailsForm.phoneNumber).inputmask("9{2,3}[-]9{7}",{ showMaskOnFocus: false,showMaskOnHover: false });
+
+
+
+
+
+const globalValidate=(form)=>{//for all the forms
   return {
     errorClass: "invalid",
     highlight: function(element, errorClass, validClass) {
@@ -305,7 +337,7 @@ const globalValidate=(form)=>{
   }
 }
 
-const vaildDateFromString=(str)=>{
+const vaildDateFromString=(str)=>{//get date from user and return valid date
   const [d,m,y]=str.split("/");
   return new Date(y,Number(m-1),d);
 }
@@ -319,7 +351,7 @@ validator.addMethod("validDate",(value,element,params) => {
 },"Please enter a valid date.");
 
 validator.addMethod("fullNameLength",(value,element)=>{
-  return fullName[0].value.length+fullName[1].value.length<26
+  return fullName[0].value.length+fullName[1].value.length<=26
 },"Full name length is longer than 26 characters.");
 
 
@@ -330,7 +362,7 @@ const camelCaseToSentence =str=>{
 validator.addMethod("deliveryMaxLength",(value,element,param)=>{
   return value.length<param
 },
-(param,element)=>{
+(param,element)=>{// 
   const name=camelCaseToSentence(element.name)
  return `The ${name} may not be greater than ${param} characters.`
 })
@@ -358,7 +390,9 @@ $("#personalDetailsForm").validate({
       associationName: {
          required: true,
          maxlength:20
-        
+       },
+       customField:{
+         maxlength:10
        },
        dateOfBirth: {
          required: true,
@@ -389,10 +423,10 @@ form1.submit(e=>{
        wholeData[key]=value;
      })
      if(wholeData.title==="Corporate" || wholeData.title==="Association"){
-       removeCardFirstDepodit();
+       removeCardFirstDepodit();//remove first deposit 2
      }
      else
-      addCardFirstDepodit();
+      addCardFirstDepodit();//מטפלת בהוספת firstDeposit2 אם נצרך
     console.log(wholeData);
   }
   return false;

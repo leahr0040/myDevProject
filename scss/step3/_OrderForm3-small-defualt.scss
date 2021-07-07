@@ -272,7 +272,8 @@
 }
 .coupon {
   width: $full;
-   @extend %flexColumn;
+  border-left: none;
+   //@extend %flexColumn;
   & > * {
     margin-right: 4%;
     margin-bottom: 1%;
@@ -348,7 +349,7 @@
     border: 1.5px solid $anotherColor;
     border-radius: 5px;
     @include col(6);
-    height: 9em;
+    height: 8.5em;
     text-align: center;
     display: inline-block;
     margin-left: 0;
@@ -359,6 +360,7 @@
     & > img {
       width: 70%;
       height: 65%;
+      max-height: 4.5em;
       vertical-align: middle;
     }
     & > span:first-of-type {

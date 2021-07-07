@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>AMEX card</title>
 
+  
+
     <link rel="stylesheet" href="./scss/styles.css"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,7 +21,7 @@
 
 
 </head>
-<body id="headDocument">
+<body id="headDocument" class="d-flex flex-column" ontouchstart="">
     <header>
         <div class="smallMenu">
             <nav>
@@ -86,7 +88,7 @@
         </div>
         </div>
         
-       <section class="container-lg row mx-auto mt-3">
+       <section class="container-lg row ml-0 mx-sm-auto mt-3">
             <div class="pict col-12 px-0 col-sm-4">
                     <div>
                         <div>
@@ -98,8 +100,8 @@
                     </div>    
                  <img id="badge_price" class="img2" src="./assets/badge_price.png"/>
             </div>
-             <form  name="personalDetailsForm" class="col-12 col-sm-8" id="personalDetailsForm" action="#page2" class="container">
-              <div class="row">
+             <form  name="personalDetailsForm" class="pl-0  col-12 col-sm-8" id="personalDetailsForm" action="#page2" class="container">
+              <div class="row mx-0 pl-2 pl-sm-0">
                 <p class="col-12 h3 text-muted formTitle">PERSONAL DETAILS</p>
                 <hr id="mainHr">
                 
@@ -115,23 +117,23 @@
                         <label for="firstName"  class="text-capitalize">
                             First Name    
                         </label>
-                        <input class="" type="text" id="firstName" name="firstName" />
+                        <input class="" maxlength=26 type="text" id="firstName" name="firstName" />
                     </span>
                     <span class="col-12 col-sm-6 ">
                         <label for="lastName">
                             Last Name 
                         </label>
-                        <input type="text" id="lastName" name="lastName" />
+                        <input type="text" maxlength=26 id="lastName" name="lastName" />
                     </span>
                    
                  <div class="organization display-none row order-2 no-gutters">
-                   <hr class="hr"/>
+                   <hr class="hr ml-3"/>
                     <h5 class="text-left pl-3 py-2 ml-0">Card Acount Parameters</h5>
-                    <span >
-                    <label  class=" col-12 col-sm-6">
+                    <span class="col-12 col-sm-6">
+                    <label  class=" col-12">
                         Please specify the number of cards you would like.
                     </label><!-- onfocus='this.size=1.5;' -->
-                    <select    id="cardsNumber" name="cardsNumber" class="col-12 col-sm-6 no-gutters pl-0 ml-3">
+                    <select    id="cardsNumber" name="cardsNumber" class="col-12">
                        
                     </select>
                     </span>
@@ -147,22 +149,22 @@
                 </div>
                 
                     <span class="card1 no-gutters col-12 row ">
-                        <span class="col-12 pr-2 col-sm-6">
+                        <span class="col-12 pr-sm-2 col-sm-6">
                         <label for="customField">
                         Custom Field
                         </label >
-                        <input type="text" id="customField" name="customField" />
+                        <input type="text" id="customField" name="customField" maxlength=10/>
                         </span>
                         
-                        <span class="col-12 pl-2 col-sm-3 ibunSapn">
+                        <span class="col-12 pl-2 col-sm-3 ibanSapn">
                         <label class="mb-0">
                         <span class="IBAN">IBAN UK </span>  
                             <label class="mb-0" >
-                                <input type="radio" checked name="ibun" value="UK" class="flagRadio"  hidden/>
+                                <input type="radio" checked name="iban" value="UK" class="flagRadio"  hidden/>
                                 <img class="mb-0" src="./assets/united-kingdom.png" class="flagIcon">
                             </label>
                             <label >
-                                <input  type="radio" name="ibun" value="FR" class="flagRadio" hidden/>
+                                <input  type="radio" name="iban" value="FR" class="flagRadio" hidden/>
                                 <img class="mb-0 " src="./assets/france.png"  class="flagIcon">
                             </label>
                         </label>
@@ -171,23 +173,23 @@
                     <input class="mt-4"  type="button" id="addCard" name="addCard" value="ADD CARD" tabindex="0" class=""/>
                     </span>
                 
-                    <span class="card2 row col-12 no-gutters display-none" name="card2">
+                    <span class="cardM2 row col-12 no-gutters display-none" name="cardM2">
                         <span class="col-12 pr-2 col-sm-6">
                         <label for="customField2">
                         Custom Field
                         </label >
                         <input type="text" id="customField2" name="customField" />
                         </span>
-                        <span class="col-12 pl-2 col-sm-3 ibunSapn">
+                        <span class="col-12 pl-2 col-sm-3 ibanSapn">
 
                         <label >
                         <span class="IBAN ">IBAN UK </span>  
                             <label  >
-                                <input type="radio" checked name="ibun2" value="UK" class="flagRadio"  hidden/>
+                                <input type="radio" checked name="ibanM2" value="UK" class="flagRadio"  hidden/>
                                 <img src="./assets/united-kingdom.png" class="flagIcon">
                             </label>
                             <label >
-                                <input  type="radio" name="ibun2" value="FR" class="flagRadio" hidden/>
+                                <input  type="radio" name="ibanM2" value="FR" class="flagRadio" hidden/>
                                 <img src="./assets/france.png"  class="flagIcon">
                             </label>
                         </label>
@@ -197,12 +199,13 @@
                     </span>
                 <div class="row  ml-0 w-100">
                     <span class="col-12 col-sm-6">
-                    
+                       
+                       
                         <label for="dateOfBirth" >
                             Date Of Birth
                         </label >
-                        <input type="text" id="dateOfBirth" name="dateOfBirth" />
-                        <span class="subText display-block">(For example: 31/12/1970)</span>
+                        <input data-inputmask-alias="date" data-inputmask-inputformat="dd/mm/yyyy" im-insert="false" placeholder="dd/mm/yyyy" type="text" id="dateOfBirth" name="dateOfBirth" />
+                        <span class="subText display-block">(For example: 07/05/1970)</span>
                     </span>    
                 </div>
                     <label  class="col-12 no-gutters mt-3 d-flex justify-content-between labelConfirm  order-3" >
@@ -219,16 +222,15 @@
         </section>
        
        
-         <section class="buttonSection"><!--class="footerSection" -->
+         <section class="buttonSection ml-0 pl-4 pl-sm-1 mx-sm-auto"><!--class="footerSection" -->
             <a href="#page0"> 
                 <button type="button"  onclick="" class="previous" ><i class="arrow left"></i> PREVIOUS</button> </i></button>
             </a>
-                <!-- <a href="#page2"> -->
+                
                     <label type="button"  for="hiddenbutton"  class="continue" >CONTINUE 
                 <i class="spinner"></i><i class="arrow right"></i>
                     </label>
-        <!-- </a> -->
-                    
+        
                  
         </section>
     </main>
@@ -271,11 +273,11 @@
                     <div class="modal-body p-1">
                       
                       <form class="border-0">
-                          <label class="correct display-block">
+                          <label class="correct d-block">
                             <input type="radio" class="m-1" name="emailSuggestion">
                         </label>
                           
-                          <label class="wrong" >
+                          <label class="wrong d-block" >
                             <input type="radio" class="m-1" checked  name="emailSuggestion">
                         </label>
                           
@@ -291,15 +293,19 @@
               </div>
 
 
-    <!-- </label> -->
-        <div class="col-12 col-sm-4 px-0 pict pictPage2">
-            <!-- <div class=" "> -->
-                <!-- <div> -->
-                <img id="platinumCard" class="img1" src="./assets/chime card for Project 3.jpg"/>
-               <!-- </div> -->
-                <img id="badgePrice" class="img2" src="./assets/badge_price.png"/>
-            <!-- </div> -->
-        </div >
+    
+    <div class="pict pictPage2 col-12 px-0 col-sm-4">
+        <div>
+            <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+        <img id="platinum_card" class="img1"  src="./assets/chime card for Project 3.jpg"/>
+        </div>    
+        <img id="badge_price" class="img2" src="./assets/badge_price.png"/>
+    </div>
+      
              <form name="detailsForm"  id="detailsForm" name="detailsForm" action="#page3" class="container col-12 col-sm-8">
                 <p >MY DETAILS</p>
 
@@ -312,12 +318,12 @@
                         <input type="text" id="email" name="email" pattern=^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/>
                         <span class="subText">(To connect to your Customer Area)</span>
                     </span>    
-               <!-- <div > -->
+              
                     <div class="col-12 col-sm-6" >
                         <label class="col-12 pl-0">
                             Area Code  
                             <select name="areaCode"  >
-                                <option value="44">+44 (United Kingdom)</option>
+                                <option checked value="44">+44 (United Kingdom)</option>
                                 <option value="33">+33 (France)</option>
                                 <option value="972">+972 (Israel)</option>
                             </select>
@@ -327,10 +333,11 @@
                         <label for="phoneNumber" >
                             Phone Number
                         </label>
-                        <input type="tel" pattern=/\b\d{3}[-]?\d{3}[-]?\d{4}|\d{2}[-]?\d{3}[-]?\d{4}|\d{1}[-]?\d{3}[-]?\d{6}|\d{1}[-]?\d{3}[-]?\d{2}[-]?\d{2}[-]?\d{2}|\*{1}?\d{2,5}\b/g‏ id="phoneNumber" name="phoneNumber" />
+                        <input type="tel" ‏ id="phoneNumber" name="phoneNumber" />
                         <span class="subText">(To receive your PIN code)</span>
                     </span>
-                <!-- </div> -->
+               
+                <hr class="regHR ml-3">
                </fieldset>
                
                 <p class="font-medium">RESIDENTIAL ADDRESS</p>
@@ -339,49 +346,48 @@
                     <span class="col-12">   
                         <input type="text" id="searchFor" name="searchFor" placeholder="search for an address"/>   
                     </span>    
-                    <div >
+                   
                     <span class="col-12 col-sm-6">
                         <label for="address">
                             Address
                         </label >
-                        <input type="text" id="address" name="address" />
+                        <input type="text" id="address" name="address"/>
                     </span>
-                    <span class="col-12 col-sm-6">
+                    <span class="col-12 col-sm-6 ">
                         <label for="additionalAddress">
                             Additional Address Details
                         </label >
                         <input type="text" id="additionalAddress" name="additionalAddress" />
                     </span>
-                    </div>
-                    <div >
-                    <span class="col-12 col-sm-4">
+                  
+                    <span class="col-12 col-sm-4  ">
                         <label for="city">
                             City
                         </label >
                         <input type="text" id="city" name="city" />
                     </span>
-                    <span class="col-12 col-sm-4">
+                    <span class="col-12 col-sm-4 ">
                         <label for="zipCode">
                             Zip Code
                         </label >
                         <input type="text" id="zipCode" name="zipCode" />
                     </span>
                 
-                    <span class="col-12 col-sm-4">
-                        <label for="country">
+                    <span class="col-12 col-sm-4 ">
+                        <label for="country" class="col-12 pl-0">
                             Country
                             <select name="country">
-                                <option value="United">United Kingdom</option>
+                                <option checked value="United Kindom">United Kingdom</option>
                                 <option value="France">France</option>
                                 <option value="Israel">Israel</option>
                             </select>
                         </label >   
                     </span>
                    
-                </div>
-                    <hr class="dottedHR">
-                <div class="display-block ">
-                <input id="delivery" class="checkbox ml-3" type="checkbox" name="delivery">
+               
+                    <hr class="dottedHR ml-3">
+                
+                    <input id="delivery" class="checkbox ml-3" type="checkbox" name="delivery">
                     <label id="labeldelivery" for="delivery">
                         <span id="confirmText">
                            
@@ -389,12 +395,12 @@
                        </span> 
                     </label> 
                         
-                    <fieldset >
+                    <fieldset class="row ml-0">
                         <div class="col-12">   
                             <input type="text" id="SearchFor" name="SearchFor" placeholder="Search for an address"/>   
                         </div>    
                    
-                        <div >
+                       
                             <span class="col-12 col-sm-6">
                                 <label for="deliveryAddress1">
                                     Address
@@ -408,8 +414,7 @@
                                 </label >
                                 <input type="text" id="deliveryAddress2" name="deliveryAddress2" />
                             </span>
-                            </div>
-                            <div >
+                           
                             <span class="col-12 col-sm-4">
                                 <label for="deliveryCity">
                                     City
@@ -424,19 +429,20 @@
                             </span>
                         
                             <span class="col-12 col-sm-4">
-                                <label for="deliveryCountry">
+                                <label for="deliveryCountry" class="col-12 pl-0">
                                     Country
                                     <select name="deliveryCountry">
-                                        <option value="United Kindom">United Kingdom</option>
+                                        <option checked value="United Kindom">United Kingdom</option>
                                         <option value="France">France</option>
                                         <option value="Israel">Israel</option>
                                     </select>
                                 </label >   
                             </span>
-                        </div>
+                       
                     </fieldset>
+                    <hr class="regHR ml-3">
                 </fieldset>
-            <!-- </div> -->
+           
                
                 
                 <fieldset class="row">
@@ -445,7 +451,7 @@
                             Secret Question
                         </label >
                             <select name="secretQuestion">
-                                <option value="secretQuestion1">​What is your mother's first name?</option>
+                                <option checked value="secretQuestion1">​What is your mother's first name?</option>
                                 <option value="secretQuestion2">​What is the name of your favorite book?</option>
                                 <option value="secretQuestion3">What is the name of your 1st school?</option>
                             </select>
@@ -466,7 +472,7 @@
                             Card #1 First Deposit
                         </label > 
                             <select name="firstDeposit1">
-                                <option value="0">​0 Eur</option>
+                                <option checked value="0">​0 Eur</option>
                                 <option value="10">10 Eur</option>
                                 <option value="20">20 Eur</option>
                             </select>
@@ -489,17 +495,18 @@
                     <span class="s mt-1"></span>
                      </label>
                 </p>
+                <hr class="regHR ml-3">
             </fieldset>
             <button id="submitForm2" type="submit" hidden></button>
             </form>
         </section>
         
-        <section >
+        <section class="px-3 px-sm-0">
             <a href="#page1"><button type="button" class="previous"><i class="left arrow"></i> PREVIOUS</button> </button></a>
-            <!-- <a href="#page3"> -->
+           
                 <label for="submitForm2"  class="continue"><i class="spinner"></i> CONTINUE <i class="right arrow"></i>
                 </label>
-            <!-- </a> -->
+           
         </section>
         
     </main> 
@@ -559,12 +566,12 @@
                 <span class="sticker check"></span>
                 <div class="cardDetails">
                     <div>
-                    <!-- <ul> -->
+                  
                         <li>Card type: AMEX International</li>
                         <li>Currency: EUR</li>
-                        <li>IBAN: UK</li>
+                        <li class="orderDetailsCardOne">IBAN: UK</li>
                     </div>    
-                    <!-- </ul> -->
+                  
                 </div>
                 <div class="paymentSummary">
                     
@@ -588,11 +595,11 @@
             </div>
             </div>
                 <form id="NeosurfCoupon" name="couponForm" class="coupon mb-4 pb-3 d-flex flex-column flex-lg-row" >
-                    <!-- <form name="coupon"> -->
+                   
                     <label for="coupon">COUPON <span>(optional)</span></label>
                     <input id="coupon" name="coupon" placeholder="Write the coupon code here ...">
                     <button class="disabled">VALIDATE</button>
-                    <!-- </form> -->
+                    
                 </form>
                 <footer class="background-blue width-100">
                     <span>Total <i class="right arrow"></i></span>
@@ -602,19 +609,19 @@
         </div>
         </div>
    
-        <div class="paymentMode col-12 col-sm-5">
+        <div class="paymentMode col-12 col-sm-5 pl-3">
             <p >PAYMENT MODE</p>
             <hr class="mainHr">
              <h4>Select your payment method</h4>
                 <section>
-                   
-                <div class="paymentModeCard">
+                  
+                <div class="paymentModeCard col-6 col-lg-4 pl-0">
                     <img class="cardImg" src="./assets/visa-card.png">
                     <span class="cardSpan width-90">VISA Card</span>
                     <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
                 
                 </div>
-                <div class="paymentModeCard">
+                <div class="paymentModeCard col-6 col-lg-4 pl-0">
                
                     <img class="cardImg" src="./assets/master-american-dinners-card.png">
                     <span class="cardSpan">Mastercard</span>
@@ -622,7 +629,7 @@
                     
                 </div>
       
-                <div class="paymentModeCard disabled" >
+                <div class="paymentModeCard disabled col-6 col-lg-4 pl-0" >
                     
                     <img class="cardImg paypal" src="./assets/paypal-card.png">
                     <span class="cardSpan">PayPAl</span>
@@ -630,27 +637,27 @@
                 
                 </div>
             
-                <div class="paymentModeCard">
+                <div class="paymentModeCard col-6 col-lg-4 pl-0">
                 
                     <img class="cardImg" src="./assets/neosurf-coupons.png">
                     <span class="cardSpan">Neosurf</span>
                     <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
                     
                 </div>
-                <div class="paymentModeCard withoutSsl">
+                <div class="paymentModeCard withoutSsl col-6 col-lg-4 pl-0">
                 
                     <img class="cardImg" src="./assets/poste.png">
                     <span class="cardSpan">Mandat (MVC)</span>
                     <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
                 </div>
-                <div class="paymentModeCard withoutSsl">
+                <div class="paymentModeCard withoutSsl col-6 col-lg-4 pl-0">
                     
                     <img class="cardImg" src="./assets/virement.png">
                     <span class="cardSpan">Transfer</span>
                     <span class="sslText">100% Secure Payment <img src="./assets/ssl-order-card-pill.png"></span>
                 </div>
             
-                <div class="paymentModeCard disabled" >
+                <div class="paymentModeCard disabled col-6 col-lg-4 pl-0" >
                     
                     <img class="cardImg" src="./assets/bitcoin.png">
                     <span class="cardSpan">Bitcoin</span>
@@ -664,18 +671,18 @@
         </div>
          
     </section>
-    <section class="footerSection">
+    <section class="footerSection ml-0 pl-4 pl-sm-1 mx-sm-auto">
         <a href="#page2"><button type="button" id="previous" class="previous" class="relative"><i class="left arrow"></i> PREVIOUS</button> </button></a>
     </section>
 </main>
 
-<main class="defualt"  id="page0" class="container-fluid">
+<main class="defualt container-fluid d-flex flex-column"  id="page0" class="">
     <p class="img">
 
     </p>
     <h1>Choose Your <span>Card</span></h1>
     <hr>
-    <div class="row ">
+    <div class="row no-gutters">
     <div class="col-12 col-sm-4">
         <a href="#page1">
             <img src="./assets/platinum-card-metal_480x304.png">
@@ -743,16 +750,23 @@
      
     <script src="https://kit.fontawesome.com/0d26ce19b4.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"></script>
 
     <script src="https://cdn.rawgit.com/infostreams/bootstrap-select/fd227d46de2afed300d97fd0962de80fa71afb3b/dist/js/bootstrap-select.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/jquery.inputmask.js"></script>
 
     <script src="js/jsPage1.js"></script>
     <script src="js/jsPage2.js"></script>

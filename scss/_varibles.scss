@@ -95,7 +95,7 @@ $clipPathThird:polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
 //@for $i from 1 through 12{
    @mixin col($i){
-        width:($i * 100%)/12 -$gutter *2;
+        width:($i * 100%)/12 -$gutter*1.5;
     }
 //}
 [class*="col"]{
