@@ -97,6 +97,8 @@ main>section:first-of-type{
      margin-left: 0;
  }
  footer{
+     //change
+    min-height: unset;
     &> div:first-child{
         display: block;
         &>div{

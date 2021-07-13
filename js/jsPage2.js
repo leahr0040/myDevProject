@@ -37,6 +37,7 @@ const addCardFirstDepodit=()=>{//addfirst deposit2 if needed
 const removeCardFirstDepodit=()=>{//remove first deposit 2
   form2.find(".firstDeposit2").addClass("display-none");
   delete wholeData.firstDeposit2;
+  
 }
 
 const changeModalRadios=(selector,value,text)=>{//email suggestion radios buttons
@@ -156,6 +157,7 @@ form2.submit(e=>{
       location.href ="#page3";
       const data= new FormData(form2[0]);
       data.forEach((value,key,parent)=>{//update in whole data
+        
           wholeData[key]=value;
       })
       console.log(wholeData);

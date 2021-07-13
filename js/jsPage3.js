@@ -115,28 +115,37 @@ const updateSummeryCard=()=>{
     const orderDetailsUl=$(".cardDetails div");
     
     const {title,firstDeposit1,firstDeposit2,reward}=wholeData;
-    const firstDeposit=firstDeposit1;
+    
 
+    //change
     const deleteFirstDeposit=(e)=>{//update after delete first depodit
+        let firstDeposit=wholeData.firstDeposit1;
         const nodeToRemove= $(e.target).parent().parent();
         const cardName=nodeToRemove.parent().attr("name");
+        
+        const cardNumber=Number(cardName[cardName.length-1]) || 1;
+        if(cardNumber===2)
+        firstDeposit=wholeData.firstDeposit2;
         sum-= Number(firstDeposit);
         updateTotalPayment(sum);
-        const cardNumber=Number(cardName[cardName.length-1]) || 1;
         wholeData[`firstDeposit${cardNumber}`]=0;
         nodeToRemove.addClass("display-none");
         form2.find(`[name=firstDeposit${cardNumber}]`).val(0) ;
         selectStyle();
         
     }
+
+    //change
     const deleteOneCard=(e)=>{//from cards
+        let firstDeposit=wholeData.firstDeposit1;
         const cardsNumberVal= wholeData.cardsNumber;
-        $(form1.find(`[name=cardsNumber]`)).val(cardsNumberVal-1);
+        
         selectStyle();
         const nodeToRemove= $(e.target).parent().parent().parent();
         let spanToRemove= form1.find(`span[name=${nodeToRemove.attr("name")}]`) ;
-        let deposit=firstDeposit2;
+        let deposit=wholeData.firstDeposit2;
         if(title==="Corporate" || title==="Association"){ 
+            $(form1.find(`[name=cardsNumber]`)).val(cardsNumberVal-1);
             wholeData.cardsNumber--;
             deposit=firstDeposit;
             spanToRemove=form1.find(`.cards span[name=${nodeToRemove.attr("name")}]`) ;//in summary card
@@ -150,8 +159,11 @@ const updateSummeryCard=()=>{
             isOneCard=true;
             form2.find(".firstDeposit2").addClass("display-none")
             spanToRemove.addClass("display-none");
+
+            //change
+            orderDetailsCardTwo.addClass("display-none");
             updateNumCardOnDetailsSummary(1)
-            const firstDepositSum=Number(!!firstDeposit2?firstDeposit2:0)
+            const firstDepositSum=Number(!!deposit?deposit:0)
             sum-=(cardPrice+firstDepositSum)
         }
         updateTotalDiscountSumAfterDelete();
@@ -258,7 +270,7 @@ const updateSummeryCard=()=>{
          updateTotalDiscountDescription();
     }
     ul.find("li:first-of-type div:first-of-type span:first-of-type i.fa").remove(); 
-    addFirstDepositToSummary(firstDeposit,ul.find("li:first-of-type"))
+    addFirstDepositToSummary(firstDeposit1,ul.find("li:first-of-type"))
     updateTotalPayment(sum);
  }//end of updateSummeryCard
 

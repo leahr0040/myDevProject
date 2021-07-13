@@ -5,6 +5,7 @@
 //all veribles
 
 const wholeData={};
+
 const card2= document.getElementsByClassName('cardM2')[0];//
 const detailsSummary=document.getElementsByClassName("detailsSummary")[0];
 const addCard= document.getElementById('addCard');
@@ -39,9 +40,9 @@ const checkUrlParams=()=>{
   let {search,hash} = window.location;
   if(!search)
     search=hash;
-  if(Object.keys(wholeData).length===0 && ["page1","page2","page3"].some(value=>hash.includes(value))){//if the page refreshed redirect to page 0
-    location.href=location.href.replace(/page[1-3]/g,"page0")
-  }
+  // if(Object.keys(wholeData).length===0 && ["page1","page2","page3"].some(value=>hash.includes(value))){//if the page refreshed redirect to page 0
+  //   location.href=location.href.replace(/page[1-3]/g,"page0")
+  // }
   const urlParams = new URLSearchParams(search);
   if(urlParams.get('seed')==="true"){
     $.getJSON("../staticPages/seed")
