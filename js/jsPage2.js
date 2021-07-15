@@ -2,42 +2,9 @@
 //veribles
 
 const modal=$("#myModal");
-const form2=$("#detailsForm");
 let emailValue="";
 
 //functions
-const addCardFirstDepodit=()=>{//addfirst deposit2 if needed
-  let firstDeposit2=form2.find(".firstDeposit2");
-   if(!isOneCard ){
-     if(firstDeposit2.length===0)
-     {
-   const firstDeposit= `<span class='col-12 firstDeposit2'>
-   <label >
-       Card #2 First Deposit
-   </label > 
-       <select name=firstDeposit2>
-           <option value="0">​0 Eur</option>
-           <option value="10">10 Eur</option>
-           <option value="20">20 Eur</option>
-       </select>
-        
-</span>`
-  form2.find(".firstDeposit1").after(firstDeposit);
-   selectStyle();
-  }
-  else{
-    firstDeposit2.removeClass("display-none")
-  }
-   }
-   else if(isOneCard){
-     firstDeposit2.addClass("display-none")
-   }
-}
-
-const removeCardFirstDepodit=()=>{//remove first deposit 2
-  form2.find(".firstDeposit2").addClass("display-none");
-  delete wholeData.firstDeposit2;
-}
 
 const changeModalRadios=(selector,value,text)=>{//email suggestion radios buttons
     const label=modal.find(selector);
@@ -50,6 +17,7 @@ const changeModalRadios=(selector,value,text)=>{//email suggestion radios button
  }
 
 //events
+
 
 $(document.detailsForm.email).focusout((e)=>{
   if(e.target.value && !$(e.target).hasClass("invalid")){  
@@ -81,6 +49,7 @@ $(document.detailsForm.email).focusout((e)=>{
  
 modal.find(".ok").click((e)=>{
     $(document.detailsForm.email).val(emailValue);
+    storage.setItem("email",emailValue)
 })
 
 //validate form2
@@ -138,7 +107,7 @@ const valid=$("#detailsForm").validate({
             minlength:5,
             maxlength:22
           },
-          confirm:{
+          confirm2:{
             required:true,
         }
        },
@@ -153,14 +122,15 @@ form2.submit(e=>{
   e.preventDefault();
   const isValid= form2.valid();
    if(isValid){
+      setOneFormToCompleted("detailsForm");
+      isForm2submited=true;
       location.href ="#page3";
-      const data= new FormData(form2[0]);
-      data.forEach((value,key,parent)=>{//update in whole data
-          wholeData[key]=value;
-      })
-      console.log(wholeData);
       updateDatailsOnLetter();
-      updateSummeryCard();//update thecardson summary
+      updateSummeryCard();//update the cards on summary
+      
+   }
+   else{
+    setOneFormToNotCompleted("detailsForm");
    }
   return false;
 })

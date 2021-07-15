@@ -3,7 +3,7 @@
     "firstName": "John",
     "lastName": "Doe",
     "dateOfBirth": "19/11/1999",
-    "ibun": "UK",
+    "iban": "UK",
     "customField": "",
     "confirm": "true",
     "email": "example@gmail.com",

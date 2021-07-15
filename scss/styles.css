@@ -131,6 +131,7 @@ main {
   vertical-align: middle; }
 
 footer {
+  min-height: 380px;
   height: 80vh;
   background-color: #e6e3e3;
   font-weight: bold; }
@@ -377,7 +378,7 @@ label.invalid {
   font-size: .8em;
   font-weight: bolder; }
 
-[name="confirm"] {
+[name^="confirm"] {
   height: 0; }
 
 label {
@@ -481,9 +482,9 @@ input[type="button"] {
   font-weight: 600;
   letter-spacing: .5px; }
 
-.card2 [type="button"] {
+.cardM2 [type="button"] {
   background-color: #c50606;
-  width: 9em; }
+  width: 7.5em; }
 
 .labelConfirm {
   position: relative;
@@ -613,8 +614,7 @@ button {
   height: 15px;
   width: 15px;
   background-color: #9c9bf5;
-  box-shadow: 0 0 5px 0px #a6a4f7 inset;
-  }
+  box-shadow: 0 0 5px 0px #a6a4f7 inset; }
 
 .checkmark:after, .check:after {
   content: "";
@@ -1113,12 +1113,14 @@ fieldset {
   form > hr {
     margin-left: 0; }
 
-  footer > div:first-child {
-    display: block; }
-    footer > div:first-child > div {
-      margin-bottom: 1%; }
-  footer > div:nth-child(2) img {
-    width: 50%; }
+  footer {
+    min-height: unset; }
+    footer > div:first-child {
+      display: block; }
+      footer > div:first-child > div {
+        margin-bottom: 1%; }
+    footer > div:nth-child(2) img {
+      width: 50%; }
 
   .pictPage2 {
     display: block;

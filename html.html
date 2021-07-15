@@ -128,16 +128,16 @@
                    
                  <div class="organization display-none row order-2 no-gutters">
                    <hr class="hr ml-3"/>
-                    <h5 class="text-left pl-3 py-2 ml-0">Card Acount Parameters</h5>
-                    <span class="col-12 col-sm-6">
+                    <h5 class="text-left pl-3 py-2 ml-0 col-12">Card Acount Parameters</h5>
+                    <span class="col-12 col-sm-6 d-block">
                     <label  class=" col-12">
                         Please specify the number of cards you would like.
                     </label><!-- onfocus='this.size=1.5;' -->
-                    <select    id="cardsNumber" name="cardsNumber" class="col-12">
+                    <select    id="cardsNumber" name="cardsNumber" class="col-12 d-block">
                        
                     </select>
                     </span>
-                    <div class="display-block mt-3 pl-3 customizeConfirm" >
+                    <div class="d-block mt-3 pl-3 customizeConfirm col-12" >
                         <input id="Customize" class="checkbox" type="checkbox" name="Customize">
                             <label id="Customize" for="Customize">
                                 <span >
@@ -178,7 +178,7 @@
                         <label for="customField2">
                         Custom Field
                         </label >
-                        <input type="text" id="customField2" name="customField" />
+                        <input type="text" id="customField2" name="customField2" />
                         </span>
                         <span class="col-12 pl-2 col-sm-3 ibanSapn">
 
@@ -212,7 +212,7 @@
                         <span class="col-9">
                             I confirm that I have read and accepted the Legal Notice, General Terms and Conditions and Privacy Policy.  
                        </span>
-                        <input id="confirm"  type="checkbox" checked name="confirm"  required/>
+                        <input id="confirm"  type="checkbox" checked name="confirm1"  required/>
                         <span class="s mt-1"></span>
                     </label>
                <button id="hiddenbutton" hidden>submit</button>
@@ -333,7 +333,7 @@
                         <label for="phoneNumber" >
                             Phone Number
                         </label>
-                        <input type="tel" ‏ id="phoneNumber" name="phoneNumber" />
+                        <input type="tel" ‏ id="phoneNumber" name="phoneNumber" maxlength="11"/>
                         <span class="subText">(To receive your PIN code)</span>
                     </span>
                
@@ -491,7 +491,7 @@
                         <span class="col-9">
                             I would like to receive exclusive offers from AMEX Card partners   
                         </span>
-                    <input id="offersConfirm" type="checkbox" name="confirm" checked/>
+                    <input id="offersConfirm" type="checkbox" name="confirm2" checked />
                     <span class="s mt-1"></span>
                      </label>
                 </p>
@@ -768,8 +768,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/jquery.inputmask.js"></script>
 
+    <script src="js/localStorageFunctions.js"></script>
+    <script src="js/jsPage.js"></script>
     <script src="js/jsPage1.js"></script>
     <script src="js/jsPage2.js"></script>
     <script src="js/jsPage3.js"></script>
+    
 </body>
 </html>

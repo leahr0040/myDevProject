@@ -97,8 +97,7 @@ main > section {
     width: 50%;
   }
 }
-.invalid{
-  
+.invalid{ 
   border-color: #e90606 !important;
   outline: none;
 }
@@ -107,10 +106,11 @@ label.invalid,.invalidLabel{
 }
 label.invalid{
   font-size: .8em;
-    font-weight: bolder;
+  font-weight: bolder;
     //line-height: 1;
 }
-[name="confirm"]{
+
+[name^="confirm"]{
   height: 0;
   
   
@@ -231,10 +231,10 @@ input[type="button"] {
   font-weight: 600;
   letter-spacing: .5px;
 }
-.card2 [type="button"]
+.cardM2 [type="button"]
 {
   background-color:#c50606;
-  width:9em;
+  width:7.5em;
 }
 
 
@@ -284,6 +284,10 @@ input[type="button"] {
     }
   }
 }//labelConfirm
+// #confirm1-error{
+//   top:75%;
+//   position: absolute;
+// }
 
 button {
   padding: unset;

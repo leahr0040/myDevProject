@@ -1,13 +1,9 @@
 
 //veribles
 let sum=0;
-let cardPrice=29.90;
 let totalDiscount=0;
 const ul= $(".paymentSummary>div:first-of-type");
 const couponForm=$("#NeosurfCoupon");
-let discountOfCoupon="";
-isSumUpdated=false;
-
 
 
 
@@ -15,43 +11,34 @@ isSumUpdated=false;
 
 const updateDatailsOnLetter=()=>{  //apdate personal detils on the letter
     const customerDetails=$(".customerDetails");
-    const {firstName, lastName,address,city,zipCode,country}=wholeData
+    const firstName=storage.getItem("firstName");
+    const lastName=storage.getItem("lastName");
+    const address=storage.getItem("address");
+    const city=storage.getItem("city");
+    const zipCode=storage.getItem("zipCode");
+    const country=storage.getItem("country");
+
     customerDetails.find(">div:first-child").text(`${firstName} ${lastName}`);
     customerDetails.find(">div:nth-child(2)").text(address);
     customerDetails.find(">div:nth-child(3)").text(`${city}, ${zipCode}`);
     customerDetails.find(">div:nth-child(4)").text(country);
 }
 
-const updateNumCardOnDetailsSummary=(cardsNum)=>{//update cards number on the letter
-    cardsNum>1? $(detailsSummary).find("img:nth-of-type(2)").removeClass("display-none"):$(detailsSummary).find("img:nth-of-type(2)").addClass("display-none");
-    $(detailsSummary).find(".one").attr("data-content",cardsNum);
-}
 const updateTotalPayment=(total)=>{
     $(".summaryCardContainer footer span:last-of-type").text(`${total.toFixed(2)} \u20AC`)
 }
 
 const currentCardsNum=()=>{//return the cards num
-    let {cardsNumber,title}=wholeData;
+   let isOneCard= storage.getItem("isOneCard")=== 'true';
+    let cardsNumber=storage.getItem("cardsNumber");
+    let title=storage.getItem("title");
     if(title==="Mr" || title==="Mis")
     {
          cardsNumber=!isOneCard?2:1;
     }
     return cardsNumber;
 }
-const updateCardPrice=({discount,isPerCard})=>{//when update a new discount
-    if(isPerCard)
-    {
-        cardPrice-=discount;
-        sum-=(discount*currentCardsNum())
-    }
-}
-const updateSponsershipReward=(reward)=>{//update the sponsership discount details in whole data
-    wholeData.sponsershipDiscount={
-        discount:Number(reward.split(" ")[0]),
-        isPerCard:reward.includes("per card")
-    }
-    updateCardPrice(wholeData.sponsershipDiscount);
-}
+
 const updateDiscountAndSumForOrder=({discount,isPerCard})=>{//update total discont.  sum -when the discount is per order
     if(isPerCard)
     {
@@ -77,8 +64,6 @@ const updateDiscountDescription=({discount,isPerCard},discountName)=>{//discount
     discountStr=`<li class='${discountName.toLowerCase()}'><div><span>${discountName} ${per}</span><span>-${discount}€</span></div></li>`
     ul.append(discountStr);
     updateTotalDiscountDescription();
-    if(discountName.includes('discount'))
-    discountOfCoupon=discountStr;
 }
 const updateTotalDiscountDescription=()=>{//total discount in summary card
     let totalDiscountElement=ul.find("li.totalDiscount");
@@ -97,7 +82,8 @@ const updateTotalDiscountDescription=()=>{//total discount in summary card
 const updateTotalDiscountSumAfterDelete=()=>{//after delete card
     if(totalDiscount>0)
     {
-        const {couponDiscount,sponsershipDiscount}=wholeData;
+        const couponDiscount=JSON.parse(storage.getItem("couponDiscount"));
+        const sponsershipDiscount=JSON.parse(storage.getItem("sponsershipDiscount"));
         if(couponDiscount  && couponDiscount.isPerCard)
            totalDiscount-=couponDiscount.discount;
         if(sponsershipDiscount && sponsershipDiscount.isPerCard)
@@ -112,51 +98,61 @@ const oneCardPayment=ul.find("li:first-of-type");
 const updateSummeryCard=()=>{
     sum=0;
     totalDiscount=0;
-    const orderDetailsUl=$(".cardDetails div");
-    
-    const {title,firstDeposit1,firstDeposit2,reward}=wholeData;
-    const firstDeposit=firstDeposit1;
+    let cardPrice=+storage.getItem("cardPrice");
+    const orderDetailsUl=$(".cardDetails div");  
+    const title=storage.getItem("title");
+    const firstDeposit1=storage.getItem("firstDeposit1");
+    const firstDeposit2=storage.getItem("firstDeposit2");
 
     const deleteFirstDeposit=(e)=>{//update after delete first depodit
-        const nodeToRemove= $(e.target).parent().parent();
+        let firstDeposit=storage.getItem("firstDeposit1");
+        const nodeToRemove= $(e.target).parent().parent();//to remove from summary card
         const cardName=nodeToRemove.parent().attr("name");
-        sum-= Number(firstDeposit);
-        updateTotalPayment(sum);
         const cardNumber=Number(cardName[cardName.length-1]) || 1;
-        wholeData[`firstDeposit${cardNumber}`]=0;
+        if(cardNumber===2)
+            firstDeposit=storage.getItem("firstDeposit2");
+        sum-= Number(firstDeposit);//update the sum
+        updateTotalPayment(sum);
+        storage.setItem(`firstDeposit${cardNumber}`,0)
         nodeToRemove.addClass("display-none");
-        form2.find(`[name=firstDeposit${cardNumber}]`).val(0) ;
-        selectStyle();
-        
+        form2.find(`[name=firstDeposit${cardNumber}]`).val(0) ;//change the first deposit on select
+        selectStyle();       
     }
+
     const deleteOneCard=(e)=>{//from cards
-        const cardsNumberVal= wholeData.cardsNumber;
-        $(form1.find(`[name=cardsNumber]`)).val(cardsNumberVal-1);
+        let firstDeposit=storage.getItem("firstDeposit1");
+        let cardPrice=+storage.getItem("cardPrice")
+        const cardsNumberVal=storage.getItem("cardsNumber");
         selectStyle();
-        const nodeToRemove= $(e.target).parent().parent().parent();
-        let spanToRemove= form1.find(`span[name=${nodeToRemove.attr("name")}]`) ;
-        let deposit=firstDeposit2;
-        if(title==="Corporate" || title==="Association"){ 
-            wholeData.cardsNumber--;
+        const nodeToRemove= $(e.target).parent().parent().parent();//to remove from summary card
+        let spanToRemove= form1.find(`span[name=${nodeToRemove.attr("name")}]`) ;//to remove from page1
+        let deposit=storage.getItem("firstDeposit2");
+        if(title==="Corporate" || title==="Association"){
+             $(form1.find(`[name=cardsNumber]`)).val(cardsNumberVal-1);//update the select on form2
+            const cardsNumberName="cardsNumber"
+            const UpdatedcardsNumber=+storage.getItem(cardsNumberName)-1;
+            storage.setItem(cardsNumberName,UpdatedcardsNumber)
             deposit=firstDeposit;
             spanToRemove=form1.find(`.cards span[name=${nodeToRemove.attr("name")}]`) ;//in summary card
             spanToRemove.remove();//in step 1
-            updateNumCardOnDetailsSummary(wholeData.cardsNumber);
+            updateNumCardOnDetailsSummary(UpdatedcardsNumber);
             sum-=(cardPrice);
             
         }
         else{
+            orderDetailsCardTwo.addClass("display-none");//remove the iban text from order summary
+            //its should be the second card of individual cards so set it on page 1
             addCard.classList.remove("display-none");
-            isOneCard=true;
+             storage.setItem("isOneCard",true);
             form2.find(".firstDeposit2").addClass("display-none")
             spanToRemove.addClass("display-none");
             updateNumCardOnDetailsSummary(1)
-            const firstDepositSum=Number(!!firstDeposit2?firstDeposit2:0)
+            const firstDepositSum=Number(!!deposit?deposit:0)
             sum-=(cardPrice+firstDepositSum)
         }
         updateTotalDiscountSumAfterDelete();
-        delete wholeData[$(spanToRemove.find("input")[0]).attr("name")]
-        delete wholeData[$(spanToRemove.find("input")[1]).attr("name")]
+        storage.removeItem($(spanToRemove.find("input")[0]).attr("name"))//remove the customField from storage
+        storage.removeItem($(spanToRemove.find("input")[1]).attr("name"));//remove the iban from storage
         nodeToRemove.remove();
         updateTotalPayment(sum);
         updateSummaryHeight();
@@ -164,27 +160,28 @@ const updateSummeryCard=()=>{
     }
     const addCardSummery=(i,cardPayment)=>{//add a card to the summary
        sum+=cardPayment;
-
+      
         let oneCardClone=oneCardPayment.clone();
         oneCardClone.attr("name",`card${i}`);
-        const ibanType= wholeData[`iban${i}`];
-        const customField=wholeData[`customField${i}`];
+        const ibanType=storage.getItem(`iban${i}`)
+        const customField=storage.getItem(`customField${i}`)
         let customString=""
         if(customField){
             customString=`, Custom Field: ${customField}`
         }
-        oneCardClone.find("div:first-of-type span:first-of-type").text(` 1 X card (annual fees), Iban: ${ibanType}${customString}`).prepend("<i class='fa fa-trash-o'></i>");
-        oneCardClone.find("div:first-of-type span:first-of-type .fa").click(deleteOneCard);
+        oneCardClone.find("div:first-of-type span:first-of-type").text(` 1 X card (annual fees), Iban: ${ibanType}${customString}`)
+        .prepend("<i class='fa fa-trash-o'></i>");//add the trash icon
+        oneCardClone.find("div:first-of-type span:first-of-type .fa").click(deleteOneCard);//add event when clicking on trash icon
         oneCardClone.find("div:nth-of-type(2)").remove();
         ul.append(oneCardClone);
     }
     const addFirstDepositToSummary=(firstDepositSum,whereToAppend)=>{
+        
         let firstDepositElement =$(whereToAppend).find(">div:nth-of-type(2)");
-        if(firstDepositSum>0)
+        if(firstDepositSum>0)//if first deposit bigger then 0 ,add first deposit to the summary card
         {
-            if(firstDepositElement.length===0)
+            if(firstDepositElement.length===0)//if there isn't firstDepositElement
             {
-                
                 firstDepositElement=oneCardPayment.find(">div:nth-of-type(2)").clone();
                 firstDepositElement.find("span:nth-of-type(2)").text(`${Number(firstDepositSum).toFixed(2)} \u20AC`);
                 firstDepositElement.find(".fa").click(deleteFirstDeposit);//delete first deposit when click on trash icon
@@ -200,11 +197,15 @@ const updateSummeryCard=()=>{
         }
     }
     ul.empty();//remove all the cards and paste from the begining
+
+    //add the order summary
     const orderDetailsCardOne=orderDetailsUl.find(".orderDetailsCardOne");
     orderDetailsCardOne.removeClass("display-none")
-    .text(`IBAN: ${wholeData.iban}`);
+    .text(`IBAN: ${storage.getItem("iban")}`);
     let orderDetailsCardTwo =orderDetailsUl.find(".orderDetailsCardTwo");
     orderDetailsCardTwo.addClass("display-none"); 
+
+    let isOneCard= storage.getItem("isOneCard")=== 'true';
     if(title==="Corporate" || title==="Association" || !isOneCard){
         
         if(title==="Corporate" || title==="Association"){
@@ -216,7 +217,7 @@ const updateSummeryCard=()=>{
             fixed.find("span:last-of-type").text("8\u20AC");
             ul.prepend(fixed);
             sum+=8;
-            const {cardsNumber}=wholeData;
+            const cardsNumber=storage.getItem("cardsNumber")
             const cardsSpan=form1.find(`.cards span[name^='card']`)
             for (let i=0;i<cardsNumber;i++){
                 const cardName= $(cardsSpan[i]).attr("name");
@@ -228,7 +229,7 @@ const updateSummeryCard=()=>{
             addCardSummery("",cardPrice);
             addCardSummery("M2",cardPrice);
            
-           if(orderDetailsCardTwo.length==0)
+           if(orderDetailsCardTwo.length==0)//if there isn't card 2 on order summary
            {
             orderDetailsCardTwo=orderDetailsCardOne.clone();//update the order summary
             orderDetailsCardTwo.removeClass("orderDetailsCardOne").addClass("orderDetailsCardTwo");
@@ -238,7 +239,7 @@ const updateSummeryCard=()=>{
             orderDetailsCardTwo.removeClass("display-none");
            }
            addFirstDepositToSummary(firstDeposit2,ul.find("li:nth-of-type(2)"))
-           orderDetailsCardTwo.text(`Second Card IBAN: ${wholeData.ibanM2}`)
+           orderDetailsCardTwo.text(`Second Card IBAN: ${storage.getItem("ibanM2")}`)
         }
         updateSummaryHeight();
         
@@ -247,24 +248,31 @@ const updateSummeryCard=()=>{
         addCardSummery("",cardPrice);
         
     }
-    if(wholeData.sponsershipDiscount){//if there is sponsership
-        updateDiscountAndSumForOrder(wholeData.sponsershipDiscount);
-        updateDiscountDescription(wholeData.sponsershipDiscount,"Sponsership")    
+    
+    const sponsershipDiscount=JSON.parse(storage.getItem("sponsershipDiscount"))
+    if(sponsershipDiscount){//if there is sponsership
+        updateDiscountAndSumForOrder(sponsershipDiscount);
+        updateDiscountDescription(sponsershipDiscount,"Sponsership")    
     }
-    if(wholeData.couponDiscount)//if there is coupon
+    const couponDiscount=JSON.parse(storage.getItem("couponDiscount"))
+    if(couponDiscount)//if there is coupon
     {
-         ul.append(discountOfCoupon);
-         updateDiscountAndSumForOrder(wholeData.couponDiscount);
+         updateDiscountAndSumForOrder(couponDiscount);
+         updateDiscountDescription(couponDiscount,"discount");
          updateTotalDiscountDescription();
     }
-    ul.find("li:first-of-type div:first-of-type span:first-of-type i.fa").remove(); 
-    addFirstDepositToSummary(firstDeposit,ul.find("li:first-of-type"))
+    ul.find("li:first-of-type div:first-of-type span:first-of-type i.fa").remove(); //remove the trash icon from the first card on summary
+    addFirstDepositToSummary(firstDeposit1,ul.find("li:first-of-type"))
     updateTotalPayment(sum);
  }//end of updateSummeryCard
 
+ 
+
+
 //events
 
-couponForm.find("input").change((e)=>{//add qremove the disabled class
+
+couponForm.find("input").change((e)=>{//add/remove the disabled class
     const button=couponForm.find("button");
     e.target.value!==""?button.removeClass("disabled"):button.addClass("disabled")
 })
@@ -306,17 +314,20 @@ couponForm.submit(e=>{
                 
                 if(obj.validCode===formData.get('coupon')){
                     isLegalCoupon=true;//there is validcoupon
-                    const prevCoupon=wholeData.couponDiscount;
-                    wholeData.couponDiscount={
+                    const prevCoupon=JSON.parse(storage.getItem("couponDiscount"));
+                    const couponDiscount={
                         discount:Number(obj.amount),
                         isPerCard:obj.type.includes("per card")
                     }
+                    storage.setItem("couponDiscount",JSON.stringify(couponDiscount));
+                    let cardPrice=+storage.getItem("cardPrice");
                     if(prevCoupon){//restart the discount of prev coupon if exsist
                         if(prevCoupon.isPerCard){
                             const thisDiscout=prevCoupon.discount*currentCardsNum();
                             sum+=thisDiscout;
                             totalDiscount-=thisDiscout;
                             cardPrice+=prevCoupon.discount;
+                            storage.setItem("cardPrice",cardPrice)
                             
                         }
                         else
@@ -325,18 +336,16 @@ couponForm.submit(e=>{
                             totalDiscount-=prevCoupon.discount;
                         }
                          
-                        ul.find(".discount").remove();
+                        ul.find(".discount").remove();//remove the prev coupon from summary card
                     }
                  
-                    updateCardPrice(wholeData.couponDiscount);
-                 updateDiscountAndSumForOrder(wholeData.couponDiscount)
-
-                   updateDiscountDescription(wholeData.couponDiscount,"discount");
-                   wholeData.coupon=wholeData.couponDiscount.discount+' '+obj.type;
+                   updateCardPrice(couponDiscount);
+                   updateDiscountAndSumForOrder(couponDiscount)
+                   updateDiscountDescription(couponDiscount,"discount");
                     return;
                 }    
            })
-           if(!isLegalCoupon)
+           if(!isLegalCoupon)//the coupon is invalid, 
            {
             $(couponInput).valid();
            }

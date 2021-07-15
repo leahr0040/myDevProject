@@ -137,6 +137,7 @@ main{
   vertical-align: middle;
 }
 footer {
+    min-height: 380px;
     height: 80vh;
     background-color: $praymaryColor;
     // @extend %flexColumn;
