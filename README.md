@@ -56,7 +56,7 @@ In addition he can enter a coupon to get a discount on each card / order. He can
 
 ## Built With
 
-This project was uses some framwoeks and plugins:
+This project was uses some framworks and plugins:
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [Bootstrap-select](https://developer.snapappointments.com/bootstrap-select/)
