@@ -36,7 +36,10 @@ The project uses local storage. All fields data is stored in local storage.
  <li>sponsership=&lt;sponsership code&gt; add a discount if vaild</li>  
   <li> seed=true for seeding the form with static parameters.</li> 
  The url parameters diagram:
- ![URL parameters diagram](./Url parameters diagram.png)
+<p>
+    <img src="https://user-images.githubusercontent.com/71343931/126081770-779e7155-b714-44b2-b787-527ec7773a66.jpg"  />
+</p>
+
 </ul>
 
 The user fills in the form fields. It cannot continue until all fields are valid.</br>
