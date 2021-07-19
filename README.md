@@ -33,7 +33,7 @@ The project uses local storage. All fields data is stored in local storage.
 <div> The user can also add some parameters to the URL :</div>
 <ul>
 
- <li>sponsership=&lt;sponsership code&gt; add a discount if vaild</li>  
+ <li>sponsership=&lt;sponsership code&gt; add a discount if valid</li>  
   <li> seed=true for seeding the form with static parameters.</li> 
  The url parameters diagram:
 <p>
