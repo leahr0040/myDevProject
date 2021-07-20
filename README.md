@@ -37,7 +37,7 @@ The project uses local storage. All fields data is stored in local storage.
   <li> seed=true for seeding the form with static parameters.</li> 
  The url parameters diagram:
 <p>
-    <img src="https://user-images.githubusercontent.com/71343931/126166871-70671877-9861-4741-8592-00e666e31e7c.png"  />
+    <img src="https://user-images.githubusercontent.com/71343931/126288661-1222c9ad-51e6-4e63-9f50-e369b8d7019f.png"  />
 </p>
 
 </ul>
